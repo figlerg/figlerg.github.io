@@ -3,6 +3,10 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
+build.log
+
+# Self-hosted third-party libs/fonts: re-downloaded at build time (download: true)
+assets/libs/
 
 # Ruby / Bundler
 vendor/

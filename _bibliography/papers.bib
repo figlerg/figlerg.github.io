@@ -3,43 +3,37 @@
 
 @comment{
   ============================================================================
-  HINWEIS (Felix): Hier kommen deine BibTeX-Einträge rein. Die Publikationsliste
+  HINWEIS (Felix): Hier kommen deine BibTeX-Eintraege rein. Die Publikationsliste
   unter /publications/ wird daraus automatisch generiert.
 
-  Du kannst ganz normale BibTeX-Einträge einfügen (z.B. den "Cite"-Export von
-  Google Scholar / dem Verlag). al-folio versteht zusätzlich ein paar optionale
-  Sonderfelder, die schöne Buttons/Badges erzeugen:
+  WICHTIG: BibTeX kennt KEINE Zeilen-Kommentare (kein % und kein //). Felder, die
+  du (noch) nicht willst, einfach ganz WEGLASSEN statt auskommentieren.
 
-    selected    = {true}    -> erscheint auch auf der Startseite ("selected papers")
-    bibtex_show = {true}    -> Button, der den BibTeX-Eintrag anzeigt
-    abbr        = {FM'25}   -> kleines Kürzel/Badge links neben dem Eintrag
-    pdf         = {datei.pdf}  oder eine volle URL  -> "PDF"-Button
-                                 (lokale PDFs in assets/pdf/ ablegen)
+  Du kannst normale BibTeX-Eintraege einfuegen (z.B. den "Cite"-Export von
+  Google Scholar / dem Verlag). al-folio versteht zusaetzlich diese optionalen
+  Sonderfelder, die schoene Buttons/Badges erzeugen:
+
+    selected    = {true}        -> erscheint auch auf der Startseite ("selected papers")
+    bibtex_show = {true}        -> Button, der den BibTeX-Eintrag anzeigt
+    abbr        = {FM'25}       -> kleines Kuerzel/Badge links neben dem Eintrag
+    pdf         = {datei.pdf}   -> "PDF"-Button (lokale PDFs in assets/pdf/ ablegen; auch volle URL moeglich)
     code        = {https://github.com/...}   -> "Code"-Button
     html        = {https://...}              -> "HTML"/Verlags-Button
     arxiv       = {2401.00000}               -> arXiv-Button
     doi         = {10.1145/...}
-    abstract    = {...}      -> ausklappbares Abstract
-    preview     = {bild.png} -> Vorschaubild (in assets/img/publication_preview/)
+    abstract    = {...}         -> ausklappbares Abstract
+    preview     = {bild.png}    -> Vorschaubild (in assets/img/publication_preview/)
 
-  Lösche diesen Kommentar gern, sobald du eigene Einträge hast.
+  Loesche diesen Block gern, sobald du eigene Eintraege hast.
   ============================================================================
 }
 
-% ----------------------------------------------------------------------------
-% VORLAGE — kopieren, ausfüllen, bei Bedarf vervielfältigen:
-% ----------------------------------------------------------------------------
 @inproceedings{gigler2025example,
-  abbr      = {VENUE'25},
-  title     = {Titel deiner Publikation},
-  author    = {Gigler, Felix and Coauthor, A.},
-  booktitle = {Proceedings of the Some Conference (VENUE)},
-  year      = {2025},
-  % doi     = {10.xxxx/xxxxx},
-  % arxiv   = {2501.00000},
-  % pdf     = {https://...},
-  % code    = {https://github.com/figlerg/...},
-  % abstract = {Kurzes Abstract hier ...},
+  abbr        = {VENUE'25},
+  title       = {Titel deiner Publikation},
+  author      = {Gigler, Felix and Coauthor, A.},
+  booktitle   = {Proceedings of the Some Conference (VENUE)},
+  year        = {2025},
   bibtex_show = {true},
   selected    = {true}
 }
