@@ -28,12 +28,77 @@
   ============================================================================
 }
 
-@inproceedings{gigler2025example,
-  abbr        = {VENUE'25},
-  title       = {Titel deiner Publikation},
-  author      = {Gigler, Felix and Coauthor, A.},
-  booktitle   = {Proceedings of the Some Conference (VENUE)},
-  year        = {2025},
-  bibtex_show = {true},
-  selected    = {true}
+
+
+
+@ARTICLE{bartocci2020miningse,
+  author={Bartocci, Ezio and Deshmukh, Jyotirmoy and Gigler, Felix and Mateis, Cristinel and Ničković, Dejan and Qin, Xin},
+  journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems}, 
+  title={Mining Shape Expressions From Positive Examples}, 
+  year={2020},
+  volume={39},
+  number={11},
+  pages={3809-3820},
+  keywords={Shape;Data mining;Learning automata;Sensors;Design automation;Integrated circuits;Noise measurement;Computational and artificial intelligence;computer science;computers and information processing;data mining;formal languages;learning automata;learning systems;pattern recognition},
+  doi={10.1109/TCAD.2020.3012240}}
+
+@inproceedings{basset2021samplingse,
+author = {Basset, Nicolas and Dang, Thao and Gigler, Felix and Mateis, Cristinel and Ni\v{c}kovi\'{c}, Dejan},
+title = {Sampling of shape expressions with ShapEx},
+year = {2021},
+isbn = {9781450391276},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3487212.3487350},
+doi = {10.1145/3487212.3487350},
+abstract = {In this paper we present ShapEx, a tool that generates random behaviors from shape expressions, a formal specification language for describing sophisticated temporal behaviors of CPS. The tool samples a random behavior in two steps: (1) it first explores the space of qualitative parameterized shapes and then (2) instantiates parameters by sampling a possibly non-linear constraint. We implement several sampling strategies in the tool that we present in the paper and demonstrate its applicability on two use scenarios.},
+booktitle = {Proceedings of the 19th ACM-IEEE International Conference on Formal Methods and Models for System Design},
+pages = {118–125},
+numpages = {8},
+keywords = {hit-and-run, sampling, shape expressions, testing},
+location = {Virtual Event, China},
+series = {MEMOCODE '21}
+}
+
+
+@article{gigler2022contacttracing,
+title = {Contact Tracing for Disease Containment: a Network-Based Analysis*},
+journal = {IFAC-PapersOnLine},
+volume = {55},
+number = {20},
+pages = {451-456},
+year = {2022},
+note = {10th Vienna International Conference on Mathematical Modelling MATHMOD 2022},
+issn = {2405-8963},
+doi = {https://doi.org/10.1016/j.ifacol.2022.09.136},
+url = {https://www.sciencedirect.com/science/article/pii/S2405896322013362},
+author = {Felix Gigler and Christoph Urach and Martin Bicher},
+keywords = {COVID-19, SARS-CoV-2, epidemiology, contact-tracing, agent-based modelling, network modelling, discrete-event simulation, clustering},
+abstract = {Since the outbreak of the COVID-19 pandemic in spring 2020, the concept of test, trace, and isolate (TTI) was used as a non-pharmaceutical intervention against further spreading of the disease. Hereby, recent contact partners of newly confirmed SARS-CoV-2 infected persons were identified and isolated along with the originally detected case to avoid potential secondary infections. While the policy is, given the compliance of the traced persons, generally deemed efficient, not much is known about network-specific impact factors. In this work, we aim to evaluate the effectiveness of the TTI strategy when used (1) for diseases with different infectiousness levels and (2) on different contact networks. For the prior, we vary the infection probability per contact, for the latter, we analyse different clustering coefficients. Our goal is to test the validity of two hypotheses: First, we expect the policy to be more efficient if the infectiousness of the disease is small, since the time delay for isolating persons is crucial. Second, due to the implications of the friendship paradox, we expect the policy to be more effective if the clustering coefficient of the underlying contact network is high. We make use of an agent-based network model consisting of three intertwined model parts: an epidemiological SEIR model, a quarantine model and a contact-tracing model. To test the hypotheses, the disease parameters and the clustering coefficient of the underlying contact network are varied. The simulation results show that, indeed, tracing seems to have a slightly larger containment impact for networks with higher clustering, in particular for fast-spreading diseases. Yet, the effects are small compared to the impact of the infectiousness of the disease. Therefore, we find a significant decrease of the policy effectiveness the higher the transmission probability. The latter implies that the containment impact of tracing and isolating contacts becomes more efficient, if supported by additional measures that limit the infection probability or if applied in periods with low negative seasonality effects.}
+}
+
+
+
+@Mastersthesis{
+	gigler2025uniform,
+	author = {Felix Nikolas Gigler},
+	title = {Uniform sampling of timed regular expressions},
+	year = {2025},
+	address = {Wien},
+	abstract = {Systeme, die in Echtzeit und in der physischen Welt agieren, sind oft sensibel gegenüber der Reihenfolge und dem Timing von Ereignissen. Timed Regular Expressions (TRE) machen es möglich, komplexe Anforderungen an diese zeitlichen Abfolgen formal, aber dennoch intuitiv zu beschreiben. Für komplexe Systeme ist es meist unmöglich, formal zu beweisen, dass sie in allen Situationen korrekt arbeiten. Stattdessen werden sie gründlichen Tests unterzogen.Testen verfolgt üblicherweise eines von zwei Zielen: (1) kritische Testfälle finden bei denen das System Fehler macht, und (2) das Vertrauen in das System stärken, indem der Raum der Testfälle möglichst gut abgedeckt wird. Falsification Testing konzentriert sich dabei auf das erste Ziel, indem mittels Optimierungsmethoden effektiv problematische Testfälle gefunden werden. Wenn keine solchen Testfälle gefunden werden, gibt dieses Verfahren jedoch keine Information zur generellen Korrektheit des Systems. Das zweite Ziel, die Abdeckung der Testfälle zu garantieren, hat weniger Aufmerksamkeit erhalten.In dieser Arbeit wird eine neue Methode für diesen Zweck vorgestellt, in der wir die von einer TRE beschriebenen Testfälle zufällig und gleichverteilt (uniform) auswählen. So kann die Korrektheit des Systems probabilistisch garantiert werden. Wir entwickeln eine präzise Formalisierung von Volumen von TRE, die die Größe einer solchen Timed Language quantifizieren. Dieses Volumen wird verwendet, um den ersten gleichverteilten Sampling-Algorithmus zu entwickeln und die Korrektheit formal zu beweisen. Außerdem stellen wir eine neue Methode vor, in der durch gezieltes Rejection Sampling erstmals nichtdeterministische Sprachen mit einer Gleichverteilung versehen werden können. Diese Methode kann verwendet werden, um bestehende Sampling-Algorithmen für andere Formalismen zu verbessern, wie etwa Timed Automata. Wir stellen außerdem unsere Open-Source Tool-Implementierung für das gleichverteilte Sampling von TRE vor und demonstrieren in einigen Fallbeispielen, dass unsere Algorithmen praktisch einsetzbar sind.},
+	abstract = {Systems that operate in the physical world and in real time are often sensitive to the order and timing of events. Timed Regular Expressions (TRE) are a powerful and intuitive formalism for specifying the intended temporal and timed behaviour of such real-time systems. Exhaustively verifying real-time systems in all possible situations is typically infeasible, hence testing is often the preferred analysis method in practice. Testing typically has two complementary goals: (1) to efficiently find test cases in which the system fails, and (2) to gain confidence in the system's correctness in the absence of failing tests by sufficiently covering the input space. Falsification testing is a popular approach that addresses the first objective by leveraging optimization techniques to efficiently detect faults in the system. Nevertheless, it typically does not provide much useful information if no failing test case is found. While much effort has been invested in the past in the falsification testing research, coverage-based testing has not received sufficient attention.In this thesis, we focus on coverage testing and develop a method for uniformly sampling the input space of real-time systems provided in the form of TRE specifications. This method provides probabilistic guarantees for the system's correctness. We first introduce a rigorous mathematical framework for computing volumes of TRE, real-valued measures that quantify the size of timed languages. Building on the idea of timed language volumes, we develop the first direct uniform sampling algorithm for TRE specifications. Additionally, we propose a novel rejection-based technique for handling both nondeterministic specifications and the intersection operation, thus also enhancing existing uniform sampling methods for other real-time formalisms, such as Timed Automata. We implement the methods developed in this thesis in VolTRE, an open-source tool for sampling from TRE, demonstrating the practical use of our research outcomes in several case studies.},
+	keywords = {Formal languages; timed regular expressions; sampling; Formal languages; timed regular expressions; sampling},
+	doi = {10.34726/hss.2025.129120},
+	school = {Technische Universität Wien},
+}
+
+
+@misc{bartocci2026declarativescenariobasedtestingroadlogic,
+      title={Declarative Scenario-based Testing with RoadLogic}, 
+      author={Ezio Bartocci and Alessio Gambi and Felix Gigler and Cristinel Mateis and Dejan Ničković},
+      year={2026},
+      eprint={2603.09455},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2603.09455}, 
 }

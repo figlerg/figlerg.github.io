@@ -17,6 +17,7 @@ vendor/
 Thumbs.db
 *.swp
 .vscode/
+.history/
 
 # Google Drive sync conflict copies
 *conflicted copy*
