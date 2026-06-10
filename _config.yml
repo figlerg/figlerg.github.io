@@ -7,14 +7,13 @@ first_name: Felix
 middle_name: ""
 last_name: Gigler
 contact_note: >
-  # TODO Felix: optionaler Hinweis, wie man dich am besten erreicht (oder leer lassen)
+  Reachable at felix.gigler@tuwien.ac.at (TU Wien) or felix.gigler@ait.ac.at (AIT).
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  # TODO Felix: 1–2 Sätze zu deinem Forschungsgebiet. Erscheint auf der Startseite und bei Google.
-  Felix Gigler — researcher.
+  Felix Gigler — PhD candidate in Automated Reasoning at TU Wien and Junior Scientist at AIT, working on formal methods and autonomous systems.
 footer_text: >
   © Felix Gigler.
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a href="https://github.com/alshedivat/al-folio">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: Felix Gigler, researcher # TODO Felix: Forschungs-Stichwörter ergänzen (komma-getrennt)
+keywords: Felix Gigler, automated reasoning, formal methods, autonomous systems, timed regular expressions, shape expressions, scenario-based testing, TU Wien, AIT
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🔬 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -181,15 +180,11 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
-  books:
-    output: true
   news:
     defaults:
       layout: post
     output: true
   projects:
-    output: true
-  teachings:
     output: true
 
 # -----------------------------------------------------------------------------
@@ -326,8 +321,6 @@ jekyll-archives:
       year: "/blog/:year/"
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
-  books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
 display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
 display_categories: ["external-services"] # these categories will be displayed on the front page of your blog

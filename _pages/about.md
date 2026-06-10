@@ -2,16 +2,15 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: PhD Candidate in Automated Reasoning · <a href='https://www.tuwien.at/'>TU Wien</a> &amp; <a href='https://www.ait.ac.at/'>AIT</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Junior Scientist, AIT Austrian Institute of Technology</p>
+    <p>Vienna, Austria</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +26,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a PhD candidate in **Automated Reasoning** at [TU Wien](https://www.tuwien.at/), in collaboration with the [AIT Austrian Institute of Technology](https://www.ait.ac.at/), where I also work as a Junior Scientist.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My research spans **formal methods** and **autonomous systems**. Recent and ongoing work includes sampling strategies for Shape Expressions, uniform sampling for Timed Regular Expressions, and scenario-based testing of autonomous vehicles through an OpenSCENARIO 2.1 DSL interpreter. Earlier on, I worked on epidemiological modeling and simulation. I have co-authored peer-reviewed publications in verification &amp; validation and in simulation.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Before the PhD I was a Teaching Assistant at TU Wien and contributed to research on timed systems. I hold a Master's degree in Logic &amp; Computation and a Bachelor's in Technical Mathematics.
+
+You can find my publications [here](/publications/), some notes and writing on the [blog](/blog/), and a few papers I have enjoyed on my [reading list](/reading/). Feel free to reach out — links below.

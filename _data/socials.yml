@@ -1,14 +1,13 @@
 # Social-Media-Links & Usernames. Reihenfolge hier = Reihenfolge der Icons auf der Seite.
 # Plugin-Doku: https://github.com/george-gca/jekyll-socials
 # ---------------------------------------------------------------------------
-# TODO Felix: Platzhalter unten ausfüllen. Was du nicht hast, einfach mit '#' auskommentieren.
+# Was du nicht (mehr) zeigen willst, einfach mit '#' auskommentieren.
 
-email: figlergelix@gmail.com # TODO: professionelle/Uni-Adresse eintragen (wird verschleiert dargestellt gegen Spam)
+email: felix.gigler@tuwien.ac.at # wird gegen Spam-Bots verschleiert dargestellt
 github_username: figlerg
+orcid_id: 0000-0002-6495-9048
+scholar_userid: zNDX9K8AAAAJ
+linkedin_username: felix-gigler-93b86a228
 
-orcid_id: # TODO: deine ORCID, Format 0000-0000-0000-0000
-linkedin_username: # TODO: der Teil nach /in/ in deiner LinkedIn-URL
-scholar_userid: # TODO (optional): Google-Scholar-ID (der "user="-Wert in der Scholar-URL)
-
-cv_pdf: # TODO (optional): Pfad zu deinem CV-PDF, z.B. /assets/pdf/cv.pdf
+# cv_pdf: /assets/pdf/cv.pdf # optional: sobald du ein CV-PDF hinterlegst, hier eintragen
 rss_icon: true # RSS-Icon anzeigen (auskommentieren zum Ausblenden)
