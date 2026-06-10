@@ -9,7 +9,8 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Junior Scientist, AIT Austrian Institute of Technology</p>
+    <p>PhD Candidate, TU Wien</p>
+    <p>Junior Scientist, AIT</p>
     <p>Vienna, Austria</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
