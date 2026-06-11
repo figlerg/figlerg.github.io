@@ -366,8 +366,11 @@
       <!-- Personal note (used on the reading list) -->
       <div
         class="mycomment"
-        style="margin-top:0.6rem;padding:0.4rem 0.9rem;border-left:3px solid var(--global-theme-color, #b509ac);background-color:var(--global-card-bg-color, rgba(0,0,0,0.03));border-radius:0 6px 6px 0;"
+        style="margin-top:0.6rem;padding:0.5rem 0.9rem;border-left:3px solid var(--global-theme-color, #b509ac);background-color:var(--global-card-bg-color, rgba(0,0,0,0.03));border-radius:0 6px 6px 0;"
       >
+        <div style="font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--global-theme-color, #b509ac);margin-bottom:0.25rem;">
+          <i class="fa-solid fa-pen-nib"></i>&nbsp;Felix’s note
+        </div>
         {{ entry.mycomment | markdownify }}
       </div>
     {% endif %}

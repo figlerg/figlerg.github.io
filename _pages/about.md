@@ -18,8 +18,8 @@ social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  scrollable: false # using the expandable "show older" block instead (see _includes/news.liquid)
+  limit: 5 # newest 5 shown; older ones fold into an expandable block
 
 latest_posts:
   enabled: true

@@ -1,0 +1,62 @@
+{% comment %}
+  Local override of al-folio's news.liquid.
+  On the about page (include.limit=true with page.announcements.limit set): show the
+  newest N entries, and fold any older entries into an expandable <details> block.
+  Elsewhere (e.g. the /news/ archive): show all entries as a plain table.
+{% endcomment %}
+
+{% capture news_row %}{% endcapture %}
+
+<div class="news">
+  {% if site.news != blank %}
+    {% assign news = site.news | reverse %}
+    {% assign news_size = site.news | size %}
+
+    {% if include.limit and page.announcements.limit %}
+      {% assign news_limit = page.announcements.limit %}
+    {% else %}
+      {% assign news_limit = news_size %}
+    {% endif %}
+
+    <table class="table table-sm table-borderless">
+      {% for item in news limit: news_limit %}
+        <tr>
+          <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+          <td>
+            {% if item.inline %}
+              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+            {% else %}
+              <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    {% if include.limit and news_size > news_limit %}
+      {% assign older_count = news_size | minus: news_limit %}
+      <details class="news-older">
+        <summary style="cursor:pointer;color:var(--global-theme-color, #b509ac);font-weight:600;list-style:none;margin:0.2rem 0 0.4rem;">
+          <i class="fa-solid fa-chevron-down"></i>&nbsp;Show {{ older_count }} older
+          {% if older_count == 1 %}entry{% else %}entries{% endif %}
+        </summary>
+        <table class="table table-sm table-borderless">
+          {% for item in news offset: news_limit %}
+            <tr>
+              <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+              <td>
+                {% if item.inline %}
+                  {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                {% else %}
+                  <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </details>
+    {% endif %}
+  {% else %}
+    <p>No news so far...</p>
+  {% endif %}
+</div>
