@@ -1,0 +1,298 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Sampling for Timed Regular Expressions | Felix Gigler </title> <meta name="author" content="Felix Gigler"> <meta name="description" content="Volumetry and uniform sampling methods for timed regular expressions."> <meta name="keywords" content="Felix Gigler, automated reasoning, formal methods, autonomous systems, timed regular expressions, shape expressions, scenario-based testing, TU Wien, AIT"> <meta property="og:site_name" content="Felix Gigler"> <meta property="og:type" content="website"> <meta property="og:title" content="Felix Gigler | Sampling for Timed Regular Expressions"> <meta property="og:url" content="https://figlerg.github.io/projects/2_voltre/"> <meta property="og:description" content="Volumetry and uniform sampling methods for timed regular expressions."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Sampling for Timed Regular Expressions"> <meta name="twitter:description" content="Volumetry and uniform sampling methods for timed regular expressions."> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Felix  Gigler"
+        },
+        "url": "https://figlerg.github.io/projects/2_voltre/",
+        "@type": "WebSite",
+        "description": "Volumetry and uniform sampling methods for timed regular expressions.",
+        "headline": "Sampling for Timed Regular Expressions",
+        
+        "sameAs": ["https://github.com/figlerg","https://orcid.org/0000-0002-6495-9048","https://scholar.google.com/citations?user=zNDX9K8AAAAJ","https://www.linkedin.com/in/felix-gigler-93b86a228"],
+        
+        "name": "Felix  Gigler",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="/assets/libs/fontawesome/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/academicons/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/scholar-icons/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="/assets/libs/google_fonts/google-fonts.css"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%94%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://figlerg.github.io/projects/2_voltre/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Felix</span> Gigler </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/reading/">reading list </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/personal/">personal </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl shift f <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> <script>
+      (function () {
+        window.addEventListener(
+          "keydown",
+          function (e) {
+            var mod = e.ctrlKey || e.metaKey;
+            if (!mod) return;
+            var key = (e.key || "").toLowerCase();
+            if (e.shiftKey && key === "f") {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              if (typeof window.openSearchModal === "function") {
+                window.openSearchModal();
+              } else {
+                var nk = document.querySelector("ninja-keys");
+                if (nk && typeof nk.open === "function") nk.open();
+              }
+            } else if (!e.shiftKey && key === "k") {
+              // Stop al-folio's default Ctrl+K search; leave the browser's native Ctrl+K alone.
+              e.stopImmediatePropagation();
+            }
+          },
+          true,
+        );
+      })();
+    </script> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Sampling for Timed Regular Expressions</h1> <p class="post-description">Volumetry and uniform sampling methods for timed regular expressions.</p> </header> <article> <p><a href="https://github.com/figlerg/VolTRE" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a></p> <div class="repo-readme"> <p>This repository provides the implementation of <strong>VolTRE</strong>, a tool for volumetry and uniform sampling in timed regular expressions (TRE), based on novel methods (to be published).</p> <h2 id="contributors">Contributors</h2> <ul> <li> <strong>Felix Gigler</strong> (TU Wien, Vienna, Austria; AIT Austrian Institute of Technology, Vienna, Austria)</li> <li>Dejan Nickovic (AIT Austrian Institute of Technology, Vienna, Austria)</li> <li>Nicolas Basset (Univ. Grenoble Alpes, CNRS, Grenoble INP, VERIMAG, 38000 Grenoble, France)</li> <li>Thao Dang (Univ. Grenoble Alpes, CNRS, Grenoble INP, VERIMAG, 38000 Grenoble, France)</li> <li>Ezio Bartocci (TU Wien, Vienna, Austria)</li> <li>Benoît Barbot (Univ Paris Est Creteil, LACL, F-94010 Creteil, France)</li> </ul> <p>This repository was developed and maintained by <strong>Felix Gigler</strong>.</p> <h2 id="masters-thesis-uniform-sampling-of-timed-regular-expressions">Master’s Thesis: <em>Uniform Sampling of Timed Regular Expressions</em> </h2> <p>This repository accompanies the Diplomarbeit (Master’s thesis) <em>“Uniform Sampling of Timed Regular Expressions”</em>, submitted as part of the Logic and Computation program at TU Wien. The work was carried out under the supervision of Dejan Nickovic (main supervisor), with additional guidance and support from Nicolas Basset, Thao Dang, and Ezio Bartocci.</p> <h2 id="paper-slice-sampling-for-timed-regular-languages">Paper: <em>Slice Sampling for Timed Regular Languages</em> </h2> <p>This repository is associated with the upcoming paper <strong>“Slice Sampling for Timed Regular Languages”</strong>.</p> <h2 id="features">Features</h2> <ul> <li> <strong>Uniform Sampling of Timed Words</strong>: Samples timed words of a specified length and duration within a timed regular language, ensuring equal probability for all valid words.</li> <li> <strong>Timed Regular Expressions (TRE) Support</strong>: Focuses on uniform sampling exclusively for TRE, addressing a gap in existing research.</li> <li> <strong>Exact Duration Control</strong>: Allows sampling with an exact duration, an improvement over prior methods that only controlled expected durations.</li> </ul> <p>More details can be found in our publications. A research paper complementing the diploma thesis is under development.</p> <p>A selection of experiments can be found in <a href="https://github.com/figlerg/VolTRE/blob/main/experiments/paper_experiments" rel="external nofollow noopener" target="_blank">this folder</a>.</p> <h2 id="quickstart">Quickstart</h2> <h3 id="installation">Installation</h3> <p>Follow these steps to create a virtual environment and install the tool:</p> <ul> <li>Install Python 3</li> <li>Install Git</li> <li>Install pip</li> <li>Clone this repository: <code class="language-plaintext highlighter-rouge">git clone https://github.com/figlerg/VolTRE</code> </li> <li>cd into the top level folder: <code class="language-plaintext highlighter-rouge">cd VolTRE</code> </li> <li>Create a new venv: <code class="language-plaintext highlighter-rouge">python3 -m venv venv</code> </li> <li>Activate the venv (choose one): <ul> <li>For Windows Powershell: <code class="language-plaintext highlighter-rouge">venv\Scripts\activate.ps1</code> </li> <li>For Windows cmd: <code class="language-plaintext highlighter-rouge">venv\Scripts\activate.bat</code> </li> <li>For macOS/Linux: <code class="language-plaintext highlighter-rouge">source venv/bin/activate</code> </li> </ul> </li> <li>Install the required modules: <code class="language-plaintext highlighter-rouge">pip install -r requirements.txt</code> </li> <li>Install the module using setup.py <code class="language-plaintext highlighter-rouge">pip install -e .</code> </li> </ul> <p>Assuming that your platform is Windows Powershell and the prerequisites are installed, you can run this bash script to install (note that depending on your installation you may need to substitute “py” with “python”, “python3”, or the full path of your python executable):</p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>git clone https://github.com/figlerg/VolTRE
+<span class="nb">cd </span>VolTRE
+py <span class="nt">-m</span> venv venv
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.ps1
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+python <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+
+</code></pre></div> </div> <p>To check whether the installation works, run the example below.</p> <h3 id="cli-examples">🔧 CLI Examples</h3> <p><strong>Minimal sampling:</strong></p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>python main.py <span class="nt">-p</span> experiments/spec_00.tre <span class="nt">-n</span> 5 <span class="nt">-T</span> 0.5 <span class="nt">--nr_samples</span> 20
+</code></pre></div> </div> <ul> <li>Samples 20 timed words</li> <li>Each word has 5 events and total duration 0.5</li> <li>Default mode = <code class="language-plaintext highlighter-rouge">vanilla</code> </li> <li>No profiling, no seed</li> </ul> <p><strong>With profiling and fixed seed:</strong></p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>python main.py <span class="nt">-p</span> experiments/spec_00.tre <span class="nt">-n</span> 8 <span class="nt">--budget</span> 1000 <span class="nt">--nr_samples</span> 30 <span class="nt">--verbose</span> <span class="nt">--seed</span> 123
+</code></pre></div> </div> <ul> <li>Enables profiling and fixed randomness</li> <li>Useful for reproducibility and performance measurement</li> <li>Profiling data saved to <code class="language-plaintext highlighter-rouge">main.prof</code> </li> </ul> <p><strong>Only visualize the slice volume (no sampling):</strong></p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>python main.py <span class="nt">-p</span> experiments/spec_00.tre <span class="nt">-n</span> 6 <span class="nt">--visualize</span>
+</code></pre></div> </div> <ul> <li>Computes and plots the slice volume</li> <li>If <code class="language-plaintext highlighter-rouge">--verbose</code> is used, prints the piecewise volume function</li> <li>⚠️ Assumes no ambiguity or top-level intersection — warning shown if needed</li> </ul> <p><strong>Print only the total volume (no sampling):</strong></p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>python main.py <span class="nt">-p</span> experiments/spec_00.tre <span class="nt">-n</span> 6 <span class="nt">--total_volume</span>
+</code></pre></div> </div> <ul> <li>Computes and prints the total volume (area) of the slice</li> <li>Can be combined with <code class="language-plaintext highlighter-rouge">--verbose</code> for extra details</li> </ul> <h3 id="minimal-example---programmatic">Minimal Example - Programmatic</h3> <p>Test your installation by running the <a href="https://github.com/figlerg/VolTRE/blob/main/minimal_example.py" rel="external nofollow noopener" target="_blank">minimal example</a> in the top level <em>VolTRE</em> folder (with the activated venv). You should see the graph of a volume function, and upon closing it some samples in the terminal.</p> <p><code class="language-plaintext highlighter-rouge">python minimal_example.py</code></p> <p>This is the code in the example, with comment explanations:</p> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="n">random</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">parse.quickparse</span> <span class="kn">import</span> <span class="n">quickparse</span>
+<span class="kn">from</span> <span class="n">volume.slice_volume</span> <span class="kn">import</span> <span class="n">slice_volume</span>
+<span class="kn">from</span> <span class="n">sample.sample</span> <span class="kn">import</span> <span class="n">sample</span>
+
+
+<span class="c1"># SEED
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># PARSE
+</span><span class="n">ctx</span> <span class="o">=</span> <span class="nf">quickparse</span><span class="p">(</span><span class="nf">join</span><span class="p">(</span><span class="sh">'</span><span class="s">experiments</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">spec_00.tre</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Parsed the expression </span><span class="si">{</span><span class="n">ctx</span><span class="p">.</span><span class="nf">getText</span><span class="p">()</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># VOLUMES
+</span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>                       <span class="c1"># set fixed length n
+</span><span class="n">T</span> <span class="o">=</span> <span class="mf">3.5</span>                     <span class="c1"># set fixed duration T
+</span>
+<span class="n">V</span> <span class="o">=</span> <span class="nf">slice_volume</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>    <span class="c1"># compute volume function
+</span>
+<span class="n">V</span><span class="p">.</span><span class="nf">fancy_print</span><span class="p">()</span>             <span class="c1"># prints all segments and their polynomials
+</span>
+<span class="n">V</span><span class="p">.</span><span class="nf">plot</span><span class="p">()</span>                    <span class="c1"># plot the function
+</span>
+<span class="n">nr_samples</span> <span class="o">=</span> <span class="mi">10</span>             <span class="c1"># assume we want to generate 10 samples
+</span>
+<span class="c1"># SLICE SAMPLING
+</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">nr_samples</span><span class="p">):</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>      <span class="c1"># generates a TimedWord object
+</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">w = </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s"> duration = </span><span class="si">{</span><span class="n">w</span><span class="p">.</span><span class="n">duration</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># duration is as specified
+</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="s">Now sampling all slices:</span><span class="se">\n</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># SAMPLING ALL SLICES
+</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">nr_samples</span><span class="p">):</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>      <span class="c1"># generates a TimedWord object
+</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">w = </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s"> duration = </span><span class="si">{</span><span class="n">w</span><span class="p">.</span><span class="n">duration</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># duration is free but compatible with spec
+</span>
+</code></pre></div> </div> <p>For a more in-depth tutorial refer to our <a href="https://github.com/figlerg/VolTRE/blob/main/tutorial.ipynb" rel="external nofollow noopener" target="_blank">Tutorial JuPyter Notebook</a>.</p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Felix Gigler. © Felix Gigler. Built with <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> &amp; <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. <a href="https://figlerg.github.io/impressum/">Impressum</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="/assets/libs/masonry/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="/assets/libs/imagesloaded/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="/assets/libs/mathjax/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="/assets/libs/polyfill/polyfill.min.js" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="/assets/libs/vanilla-back-to-top/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "Peer-reviewed publications, in reverse chronological order. Generated from a BibTeX file.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-reading-list",
+          title: "reading list",
+          description: "Papers by others that I have enjoyed and would recommend, each with a short personal note. These are not my own publications.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/reading/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Research projects and things I have built.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Curriculum vitae. The content is generated from _data/cv.yml.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-personal",
+          title: "personal",
+          description: "A little beyond the research.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/personal/";
+          },
+        },{id: "post-hello-world",
+        
+          title: "Hello, world",
+        
+        description: "A first post.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/hello/";
+          
+        },
+      },{id: "news-presented-our-work-on-sampling-shape-expressions-shapex-at-memocode-2021",
+          title: 'Presented our work on sampling shape expressions (ShapEx) at MEMOCODE 2021.',
+          description: "",
+          section: "News",},{id: "news-completed-my-bsc-in-technical-mathematics-at-tu-wien-mortar-board",
+          title: 'Completed my BSc in Technical Mathematics at TU Wien. <img class="emoji" title=":mortar_board:" alt=":mortar_board:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-attended-the-cps-summer-school-in-pula-sardinia-and-won-the-best-creative-lab-idea-award-trophy-for-pitching-ravyolo-our-real-time-automotive-virtualization-concept",
+          title: 'Attended the CPS Summer School in Pula, Sardinia, and won the Best Creative...',
+          description: "",
+          section: "News",},{id: "news-presented-our-network-based-analysis-of-contact-tracing-at-mathmod-2022-in-vienna",
+          title: 'Presented our network-based analysis of contact tracing at MATHMOD 2022 in Vienna.',
+          description: "",
+          section: "News",},{id: "news-defended-my-master-39-s-thesis",
+          title: 'Defended my Master&#39;s thesis',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2025-03-15-master-defense/";
+            },},{id: "news-attended-the-vetss-summer-school-2025-verified-trustworthy-software-systems-at-the-advanced-research-centre-arc-university-of-glasgow",
+          title: 'Attended the VeTSS Summer School 2025 (Verified Trustworthy Software Systems) at the Advanced...',
+          description: "",
+          section: "News",},{id: "news-attended-hscc-hybrid-systems-computation-and-control",
+          title: 'Attended HSCC (Hybrid Systems: Computation and Control).',
+          description: "",
+          section: "News",},{id: "projects-scenario-based-testing-of-autonomous-vehicles",
+          title: 'Scenario-Based Testing of Autonomous Vehicles',
+          description: "An interpreter for an OpenSCENARIO 2.1 domain-specific language",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_openscenario/";
+            },},{id: "projects-sampling-for-shape-expressions",
+          title: 'Sampling for Shape Expressions',
+          description: "A tool for generating examples from shape expressions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_shapex/";
+            },},{id: "projects-sampling-for-timed-regular-expressions",
+          title: 'Sampling for Timed Regular Expressions',
+          description: "Volumetry and uniform sampling methods for timed regular expressions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_voltre/";
+            },},{id: "projects-anyhr-hit-and-run-mcmc-sampling",
+          title: 'anyHR: Hit-and-Run MCMC Sampling',
+          description: "Hit-and-run MCMC algorithms for sampling sets defined by arbitrary inequality constraints.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_anyhr/";
+            },},{id: "projects-epidemic-spreading-on-social-networks",
+          title: 'Epidemic Spreading on Social Networks',
+          description: "ABM/DES modeling of COVID epidemic spread and contact tracing on social networks.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_nettracesim/";
+            },},{id: "projects-canonical-huffman-coding",
+          title: 'Canonical Huffman Coding',
+          description: "Canonical Huffman code, written for the Information Theory course at TU Wien.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_huffman/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%66%65%6C%69%78.%67%69%67%6C%65%72@%74%75%77%69%65%6E.%61%63.%61%74", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/figlerg", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0002-6495-9048", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=zNDX9K8AAAAJ", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/felix-gigler-93b86a228", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

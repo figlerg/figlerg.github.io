@@ -1,0 +1,286 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Sampling for Shape Expressions | Felix Gigler </title> <meta name="author" content="Felix Gigler"> <meta name="description" content="A tool for generating examples from shape expressions."> <meta name="keywords" content="Felix Gigler, automated reasoning, formal methods, autonomous systems, timed regular expressions, shape expressions, scenario-based testing, TU Wien, AIT"> <meta property="og:site_name" content="Felix Gigler"> <meta property="og:type" content="website"> <meta property="og:title" content="Felix Gigler | Sampling for Shape Expressions"> <meta property="og:url" content="https://figlerg.github.io/projects/1_shapex/"> <meta property="og:description" content="A tool for generating examples from shape expressions."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Sampling for Shape Expressions"> <meta name="twitter:description" content="A tool for generating examples from shape expressions."> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Felix  Gigler"
+        },
+        "url": "https://figlerg.github.io/projects/1_shapex/",
+        "@type": "WebSite",
+        "description": "A tool for generating examples from shape expressions.",
+        "headline": "Sampling for Shape Expressions",
+        
+        "sameAs": ["https://github.com/figlerg","https://orcid.org/0000-0002-6495-9048","https://scholar.google.com/citations?user=zNDX9K8AAAAJ","https://www.linkedin.com/in/felix-gigler-93b86a228"],
+        
+        "name": "Felix  Gigler",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="/assets/libs/fontawesome/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/academicons/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/scholar-icons/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="/assets/libs/google_fonts/google-fonts.css"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%94%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://figlerg.github.io/projects/1_shapex/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Felix</span> Gigler </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/reading/">reading list </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/personal/">personal </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl shift f <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> <script>
+      (function () {
+        window.addEventListener(
+          "keydown",
+          function (e) {
+            var mod = e.ctrlKey || e.metaKey;
+            if (!mod) return;
+            var key = (e.key || "").toLowerCase();
+            if (e.shiftKey && key === "f") {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              if (typeof window.openSearchModal === "function") {
+                window.openSearchModal();
+              } else {
+                var nk = document.querySelector("ninja-keys");
+                if (nk && typeof nk.open === "function") nk.open();
+              }
+            } else if (!e.shiftKey && key === "k") {
+              // Stop al-folio's default Ctrl+K search; leave the browser's native Ctrl+K alone.
+              e.stopImmediatePropagation();
+            }
+          },
+          true,
+        );
+      })();
+    </script> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Sampling for Shape Expressions</h1> <p class="post-description">A tool for generating examples from shape expressions.</p> </header> <article> <p><a href="https://github.com/figlerg/ShapEx" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a></p> <div class="repo-readme"> <h2 id="introduction">Introduction</h2> <p>ShapEx is a tool that generates random behaviors from shape expressions, a formal specification formalism for describing sophisticated temporal behaviors of CPS. The tool samples a random behavior in two steps:</p> <p>(1) it first explores the space of qualitative parameterized shapes and then</p> <p>(2) instantiates parameters by sampling a possibly non-linear constraint.</p> <p>It uses several sampling algorithms for the different stages of sample generation and generates timed traces according to a textual shape expression file.</p> <h2 id="installation">Installation</h2> <p>ShapEx is written in Python 3 and uses our standalone library <em>anyHR</em>. It is necessary to have a working installation of Python 3, <a href="https://pip.pypa.io/en/stable/installing/" rel="external nofollow noopener" target="_blank">pip</a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" rel="external nofollow noopener" target="_blank">git</a> for the following installation process.</p> <p>To install the tool, open a terminal and type <code class="language-plaintext highlighter-rouge">pip install ShapEx</code>.</p> <p>This also installs <em>anyHR</em> and all other dependencies. The below example should now work right away.</p> <h2 id="use">Use</h2> <p>The following block illustrates a minimum working example for the use of the ShapEx tool to generate a set of “pulse” traces. 100 samples are generated for the SE from the imported text file ‘pulse.sx’.</p> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">shapex.shapex.ShapEx</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">shapex.misc.visualize</span> <span class="kn">import</span> <span class="n">plotter</span>
+
+<span class="c1"># initialize ShapEx object
+</span><span class="n">se</span> <span class="o">=</span> <span class="nc">ShapEx</span><span class="p">(</span><span class="n">dir_sampling</span><span class="o">=</span><span class="n">DirectionSampling</span><span class="p">.</span><span class="n">CDHR</span><span class="p">,</span> <span class="n">init_point</span><span class="o">=</span><span class="n">InitPoint</span><span class="p">.</span><span class="n">SMT</span><span class="p">,</span><span class="n">timestep</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="c1"># loads the specification
+</span><span class="n">se</span><span class="p">.</span><span class="nf">add_shape_expression</span><span class="p">(</span><span class="sh">'</span><span class="s">pulse.sx</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># Generate 100 examples
+</span><span class="n">samples</span> <span class="o">=</span> <span class="n">se</span><span class="p">.</span><span class="nf">samples</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="nf">plotter</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</code></pre></div> </div> <p>For this, prepare the specification file ‘pulse.sx’ in the same directory as the above script: The pulse is a concatenation of line segments with certain parameter ranges, with additional constraints to make the segments more continuous.</p> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="c1"># regular expression
+</span><span class="nf">line</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">d1</span><span class="p">).</span><span class="nf">line</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">d2</span><span class="p">).</span><span class="nf">line</span><span class="p">(</span><span class="n">a3</span><span class="p">,</span><span class="n">b3</span><span class="p">,</span><span class="n">d3</span><span class="p">).</span><span class="nf">line</span><span class="p">(</span><span class="n">a4</span><span class="p">,</span><span class="n">b4</span><span class="p">,</span><span class="n">d4</span><span class="p">).</span><span class="nf">line</span><span class="p">(</span><span class="n">a5</span><span class="p">,</span><span class="n">b5</span><span class="p">,</span><span class="n">d5</span><span class="p">)</span>
+
+<span class="p">:</span>
+
+<span class="c1"># parameter declarations with ranges
+</span><span class="n">param</span> <span class="n">a1</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">param</span> <span class="n">b1</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+<span class="n">duration</span> <span class="n">d1</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">param</span> <span class="n">a2</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">param</span> <span class="n">b2</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+<span class="n">duration</span> <span class="n">d2</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">param</span> <span class="n">a3</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">param</span> <span class="n">b3</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">duration</span> <span class="n">d3</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">param</span> <span class="n">a4</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">param</span> <span class="n">b4</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">);</span>
+<span class="n">duration</span> <span class="n">d4</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">param</span> <span class="n">a5</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">param</span> <span class="n">b5</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">duration</span> <span class="n">d5</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1"># relational constraints
+</span><span class="n">b1</span><span class="o">+</span><span class="n">a1</span><span class="o">*</span><span class="n">d1</span><span class="o">-</span><span class="n">b2</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">b2</span><span class="o">+</span><span class="n">a2</span><span class="o">*</span><span class="n">d2</span><span class="o">-</span><span class="n">b3</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">b3</span><span class="o">+</span><span class="n">a3</span><span class="o">*</span><span class="n">d3</span><span class="o">-</span><span class="n">b4</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">b4</span><span class="o">+</span><span class="n">a4</span><span class="o">*</span><span class="n">d4</span><span class="o">-</span><span class="n">b5</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">b5</span><span class="o">+</span><span class="n">a5</span><span class="o">*</span><span class="n">d5</span><span class="o">-</span><span class="n">b1</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">);</span>
+</code></pre></div> </div> <p>Both files can be found in the shapex/examples directory of this repository.</p> <p>The following table gives an overview of the parameters that can be set at ShapEx object initialization (line 4 of the code above):</p> <table> <thead> <tr> <th>Parameter</th> <th>Description</th> <th>Values</th> </tr> </thead> <tbody> <tr> <td>timestep</td> <td>Difference between two consecutive timestamps.</td> <td>positive float (default 1.0)</td> </tr> <tr> <td>word_sampler</td> <td>Qualitative word sampler.</td> <td>WordSamplerMode.SEARCH (default), WordSamplerMode.BOLTZMANN</td> </tr> <tr> <td>search_budget</td> <td>Maximum number of distinctive qualitative words. Applicable to WordSamplerMode.SEARCH only.</td> <td>positive integer (default 10)</td> </tr> <tr> <td>mean_word_length</td> <td>Mean length of qualitative word. Applicable to WordSamplerMode.BOLTZMANN only.</td> <td>positive float (default 10.0)</td> </tr> <tr> <td>dir_sampling</td> <td>Direction sampling hit-and-run algorithm. Random (RDHR) vs. coordinate direction (CDHR)</td> <td>DirectionSampling.RDHR (default), DirectionSampling.CDHR</td> </tr> <tr> <td>shrinking</td> <td>Direction sampling hit-and-run algorithm.</td> <td>Shrinking.NO_SHINKING (default), Shrinking.SHRINKING</td> </tr> <tr> <td>init_point</td> <td>Hit-and-run with or without shrinking</td> <td>InitPoint.PSO (default), InitPoint.SMT</td> </tr> <tr> <td>noise_distribution</td> <td>Finding initial point for hit-and-run. Particle swarm optimization (PSO) vs. constraint solving (SMT).</td> <td>‘uniform’ (default), ‘gaussian’</td> </tr> <tr> <td>noise</td> <td>Distribution use to add noise to the generated signals.</td> <td>positive float (default 0.0)</td> </tr> </tbody> </table> <h2 id="cite">Cite</h2> <p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.1//EN” “http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd”&gt;</p> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;"> <div class="csl-entry">Basset, N., Dang, T., Gigler, F., Mateis, C., &amp; Ničković, D. (2021). Sampling of Shape Expressions with ShapEx. <i>Proceedings of the 19th ACM-IEEE International Conference on Formal Methods and Models for System Design</i>, 118–125. <a href="https://doi.org/10.1145/3487212.3487350" rel="external nofollow noopener" target="_blank">https://doi.org/10.1145/3487212.3487350</a> </div> <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1145%2F3487212.3487350&amp;rft_id=urn%3Aisbn%3A978-1-4503-9127-6&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=proceeding&amp;rft.atitle=Sampling%20of%20Shape%20Expressions%20with%20ShapEx&amp;rft.btitle=Proceedings%20of%20the%2019th%20ACM-IEEE%20International%20Conference%20on%20Formal%20Methods%20and%20Models%20for%20System%20Design&amp;rft.place=New%20York%2C%20NY%2C%20USA&amp;rft.publisher=Association%20for%20Computing%20Machinery&amp;rft.series=MEMOCODE%20'21&amp;rft.aufirst=Nicolas&amp;rft.aulast=Basset&amp;rft.au=Nicolas%20Basset&amp;rft.au=Thao%20Dang&amp;rft.au=Felix%20Gigler&amp;rft.au=Cristinel%20Mateis&amp;rft.au=Dejan%20Ni%C4%8Dkovi%C4%87&amp;rft.date=2021&amp;rft.pages=118%E2%80%93125&amp;rft.spage=118&amp;rft.epage=125&amp;rft.isbn=978-1-4503-9127-6"></span> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Felix Gigler. © Felix Gigler. Built with <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> &amp; <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. <a href="https://figlerg.github.io/impressum/">Impressum</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="/assets/libs/masonry/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="/assets/libs/imagesloaded/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="/assets/libs/mathjax/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="/assets/libs/polyfill/polyfill.min.js" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="/assets/libs/vanilla-back-to-top/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "Peer-reviewed publications, in reverse chronological order. Generated from a BibTeX file.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-reading-list",
+          title: "reading list",
+          description: "Papers by others that I have enjoyed and would recommend, each with a short personal note. These are not my own publications.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/reading/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Research projects and things I have built.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Curriculum vitae. The content is generated from _data/cv.yml.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-personal",
+          title: "personal",
+          description: "A little beyond the research.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/personal/";
+          },
+        },{id: "post-hello-world",
+        
+          title: "Hello, world",
+        
+        description: "A first post.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/hello/";
+          
+        },
+      },{id: "news-presented-our-work-on-sampling-shape-expressions-shapex-at-memocode-2021",
+          title: 'Presented our work on sampling shape expressions (ShapEx) at MEMOCODE 2021.',
+          description: "",
+          section: "News",},{id: "news-completed-my-bsc-in-technical-mathematics-at-tu-wien-mortar-board",
+          title: 'Completed my BSc in Technical Mathematics at TU Wien. <img class="emoji" title=":mortar_board:" alt=":mortar_board:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-attended-the-cps-summer-school-in-pula-sardinia-and-won-the-best-creative-lab-idea-award-trophy-for-pitching-ravyolo-our-real-time-automotive-virtualization-concept",
+          title: 'Attended the CPS Summer School in Pula, Sardinia, and won the Best Creative...',
+          description: "",
+          section: "News",},{id: "news-presented-our-network-based-analysis-of-contact-tracing-at-mathmod-2022-in-vienna",
+          title: 'Presented our network-based analysis of contact tracing at MATHMOD 2022 in Vienna.',
+          description: "",
+          section: "News",},{id: "news-defended-my-master-39-s-thesis",
+          title: 'Defended my Master&#39;s thesis',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2025-03-15-master-defense/";
+            },},{id: "news-attended-the-vetss-summer-school-2025-verified-trustworthy-software-systems-at-the-advanced-research-centre-arc-university-of-glasgow",
+          title: 'Attended the VeTSS Summer School 2025 (Verified Trustworthy Software Systems) at the Advanced...',
+          description: "",
+          section: "News",},{id: "news-attended-hscc-hybrid-systems-computation-and-control",
+          title: 'Attended HSCC (Hybrid Systems: Computation and Control).',
+          description: "",
+          section: "News",},{id: "projects-scenario-based-testing-of-autonomous-vehicles",
+          title: 'Scenario-Based Testing of Autonomous Vehicles',
+          description: "An interpreter for an OpenSCENARIO 2.1 domain-specific language",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_openscenario/";
+            },},{id: "projects-sampling-for-shape-expressions",
+          title: 'Sampling for Shape Expressions',
+          description: "A tool for generating examples from shape expressions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_shapex/";
+            },},{id: "projects-sampling-for-timed-regular-expressions",
+          title: 'Sampling for Timed Regular Expressions',
+          description: "Volumetry and uniform sampling methods for timed regular expressions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_voltre/";
+            },},{id: "projects-anyhr-hit-and-run-mcmc-sampling",
+          title: 'anyHR: Hit-and-Run MCMC Sampling',
+          description: "Hit-and-run MCMC algorithms for sampling sets defined by arbitrary inequality constraints.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_anyhr/";
+            },},{id: "projects-epidemic-spreading-on-social-networks",
+          title: 'Epidemic Spreading on Social Networks',
+          description: "ABM/DES modeling of COVID epidemic spread and contact tracing on social networks.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_nettracesim/";
+            },},{id: "projects-canonical-huffman-coding",
+          title: 'Canonical Huffman Coding',
+          description: "Canonical Huffman code, written for the Information Theory course at TU Wien.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_huffman/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%66%65%6C%69%78.%67%69%67%6C%65%72@%74%75%77%69%65%6E.%61%63.%61%74", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/figlerg", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0002-6495-9048", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=zNDX9K8AAAAJ", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/felix-gigler-93b86a228", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
