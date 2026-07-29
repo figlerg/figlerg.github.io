@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Epidemic Spreading on Social Networks
+title: "NetTraceSim: Epidemic Spreading on Social Networks"
 description: ABM/DES modeling of COVID epidemic spread and contact tracing on social networks.
 importance: 4
 category: research

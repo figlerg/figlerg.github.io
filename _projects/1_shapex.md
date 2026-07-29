@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Sampling for Shape Expressions
+title: "ShapEx: Sampling for Shape Expressions"
 description: A tool for generating examples from shape expressions.
-importance: 1
+importance: 3
 category: research
 related_publications: false
 ---

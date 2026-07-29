@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Canonical Huffman Coding
+title: "Canonical Huffman Coding"
 description: Canonical Huffman code, written for the Information Theory course at TU Wien.
 importance: 1
 category: coursework

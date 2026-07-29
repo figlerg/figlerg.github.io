@@ -40,7 +40,11 @@
   number={11},
   pages={3809-3820},
   keywords={Shape;Data mining;Learning automata;Sensors;Design automation;Integrated circuits;Noise measurement;Computational and artificial intelligence;computer science;computers and information processing;data mining;formal languages;learning automata;learning systems;pattern recognition},
-  doi={10.1109/TCAD.2020.3012240}}
+  doi={10.1109/TCAD.2020.3012240},
+  html={https://doi.org/10.1109/TCAD.2020.3012240},
+  abbr={TCAD'20},
+  bibtex_show={true},
+  selected={true}}
 
 @inproceedings{basset2021samplingse,
 author = {Basset, Nicolas and Dang, Thao and Gigler, Felix and Mateis, Cristinel and Ni\v{c}kovi\'{c}, Dejan},
@@ -57,7 +61,12 @@ pages = {118–125},
 numpages = {8},
 keywords = {hit-and-run, sampling, shape expressions, testing},
 location = {Virtual Event, China},
-series = {MEMOCODE '21}
+series = {MEMOCODE '21},
+abbr = {MEMOCODE'21},
+html = {https://doi.org/10.1145/3487212.3487350},
+code = {https://github.com/figlerg/ShapEx},
+bibtex_show = {true},
+selected = {true}
 }
 
 
@@ -70,8 +79,12 @@ pages = {451-456},
 year = {2022},
 note = {10th Vienna International Conference on Mathematical Modelling MATHMOD 2022},
 issn = {2405-8963},
-doi = {https://doi.org/10.1016/j.ifacol.2022.09.136},
+doi = {10.1016/j.ifacol.2022.09.136},
 url = {https://www.sciencedirect.com/science/article/pii/S2405896322013362},
+html = {https://doi.org/10.1016/j.ifacol.2022.09.136},
+code = {https://github.com/figlerg/NetTraceSim},
+abbr = {MATHMOD'22},
+bibtex_show = {true},
 author = {Felix Gigler and Christoph Urach and Martin Bicher},
 keywords = {COVID-19, SARS-CoV-2, epidemiology, contact-tracing, agent-based modelling, network modelling, discrete-event simulation, clustering},
 abstract = {Since the outbreak of the COVID-19 pandemic in spring 2020, the concept of test, trace, and isolate (TTI) was used as a non-pharmaceutical intervention against further spreading of the disease. Hereby, recent contact partners of newly confirmed SARS-CoV-2 infected persons were identified and isolated along with the originally detected case to avoid potential secondary infections. While the policy is, given the compliance of the traced persons, generally deemed efficient, not much is known about network-specific impact factors. In this work, we aim to evaluate the effectiveness of the TTI strategy when used (1) for diseases with different infectiousness levels and (2) on different contact networks. For the prior, we vary the infection probability per contact, for the latter, we analyse different clustering coefficients. Our goal is to test the validity of two hypotheses: First, we expect the policy to be more efficient if the infectiousness of the disease is small, since the time delay for isolating persons is crucial. Second, due to the implications of the friendship paradox, we expect the policy to be more effective if the clustering coefficient of the underlying contact network is high. We make use of an agent-based network model consisting of three intertwined model parts: an epidemiological SEIR model, a quarantine model and a contact-tracing model. To test the hypotheses, the disease parameters and the clustering coefficient of the underlying contact network are varied. The simulation results show that, indeed, tracing seems to have a slightly larger containment impact for networks with higher clustering, in particular for fast-spreading diseases. Yet, the effects are small compared to the impact of the infectiousness of the disease. Therefore, we find a significant decrease of the policy effectiveness the higher the transmission probability. The latter implies that the containment impact of tracing and isolating contacts becomes more efficient, if supported by additional measures that limit the infection probability or if applied in periods with low negative seasonality effects.}
@@ -89,16 +102,37 @@ abstract = {Since the outbreak of the COVID-19 pandemic in spring 2020, the conc
 	abstract = {Systems that operate in the physical world and in real time are often sensitive to the order and timing of events. Timed Regular Expressions (TRE) are a powerful and intuitive formalism for specifying the intended temporal and timed behaviour of such real-time systems. Exhaustively verifying real-time systems in all possible situations is typically infeasible, hence testing is often the preferred analysis method in practice. Testing typically has two complementary goals: (1) to efficiently find test cases in which the system fails, and (2) to gain confidence in the system's correctness in the absence of failing tests by sufficiently covering the input space. Falsification testing is a popular approach that addresses the first objective by leveraging optimization techniques to efficiently detect faults in the system. Nevertheless, it typically does not provide much useful information if no failing test case is found. While much effort has been invested in the past in the falsification testing research, coverage-based testing has not received sufficient attention.In this thesis, we focus on coverage testing and develop a method for uniformly sampling the input space of real-time systems provided in the form of TRE specifications. This method provides probabilistic guarantees for the system's correctness. We first introduce a rigorous mathematical framework for computing volumes of TRE, real-valued measures that quantify the size of timed languages. Building on the idea of timed language volumes, we develop the first direct uniform sampling algorithm for TRE specifications. Additionally, we propose a novel rejection-based technique for handling both nondeterministic specifications and the intersection operation, thus also enhancing existing uniform sampling methods for other real-time formalisms, such as Timed Automata. We implement the methods developed in this thesis in VolTRE, an open-source tool for sampling from TRE, demonstrating the practical use of our research outcomes in several case studies.},
 	keywords = {Formal languages; timed regular expressions; sampling; Formal languages; timed regular expressions; sampling},
 	doi = {10.34726/hss.2025.129120},
+	html = {https://doi.org/10.34726/hss.2025.129120},
+	code = {https://github.com/figlerg/VolTRE},
 	school = {Technische Universität Wien},
+	abbr = {MSc},
+	bibtex_show = {true},
 }
 
 
 @misc{bartocci2026declarativescenariobasedtestingroadlogic,
-      title={Declarative Scenario-based Testing with RoadLogic}, 
+      abbr={HSCC'26},
+      title={Declarative Scenario-based Testing with RoadLogic},
       author={Ezio Bartocci and Alessio Gambi and Felix Gigler and Cristinel Mateis and Dejan Ničković},
       year={2026},
       eprint={2603.09455},
       archivePrefix={arXiv},
       primaryClass={cs.SE},
-      url={https://arxiv.org/abs/2603.09455}, 
+      url={https://arxiv.org/abs/2603.09455},
+      arxiv={2603.09455},
+      note={Presented at HSCC 2026, Saint-Malo, France. To appear in the proceedings.},
+      bibtex_show={true},
+      selected={true},
+}
+
+@inproceedings{gigler2026uniformsamplingtre,
+      abbr={EMSOFT'26},
+      title={Uniform Sampling for Timed Regular Expressions},
+      author={Barbot, Beno\^{i}t and Bartocci, Ezio and Basset, Nicolas and Dang, Thao and Gigler, Felix and Ni\v{c}kovi\'{c}, Dejan},
+      booktitle={International Conference on Embedded Software (EMSOFT)},
+      year={2026},
+      note={Accepted for presentation; to appear.},
+      code={https://github.com/figlerg/VolTRE},
+      bibtex_show={true},
+      selected={true},
 }

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sampling for Timed Regular Expressions
+title: "VolTRE: Sampling for Timed Regular Expressions"
 description: Volumetry and uniform sampling methods for timed regular expressions.
 importance: 2
 category: research
