@@ -1,14 +1,14 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Scenario-Based Testing of Autonomous Vehicles | Felix Gigler </title> <meta name="author" content="Felix Gigler"> <meta name="description" content="An interpreter for an OpenSCENARIO 2.1 domain-specific language"> <meta name="keywords" content="Felix Gigler, automated reasoning, formal methods, autonomous systems, timed regular expressions, shape expressions, scenario-based testing, TU Wien, AIT"> <meta property="og:site_name" content="Felix Gigler"> <meta property="og:type" content="website"> <meta property="og:title" content="Felix Gigler | Scenario-Based Testing of Autonomous Vehicles"> <meta property="og:url" content="https://figlerg.github.io/projects/1_openscenario/"> <meta property="og:description" content="An interpreter for an OpenSCENARIO 2.1 domain-specific language"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Scenario-Based Testing of Autonomous Vehicles"> <meta name="twitter:description" content="An interpreter for an OpenSCENARIO 2.1 domain-specific language"> <script type="application/ld+json">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> RoadLogic: Declarative Scenario-based Testing | Felix Gigler </title> <meta name="author" content="Felix Gigler"> <meta name="description" content="A declarative language and interpreter for scenario-based testing of autonomous vehicles."> <meta name="keywords" content="Felix Gigler, automated reasoning, formal methods, autonomous systems, timed regular expressions, shape expressions, scenario-based testing, TU Wien, AIT"> <meta property="og:site_name" content="Felix Gigler"> <meta property="og:type" content="website"> <meta property="og:title" content="Felix Gigler | RoadLogic: Declarative Scenario-based Testing"> <meta property="og:url" content="https://figlerg.github.io/projects/1_roadlogic/"> <meta property="og:description" content="A declarative language and interpreter for scenario-based testing of autonomous vehicles."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="RoadLogic: Declarative Scenario-based Testing"> <meta name="twitter:description" content="A declarative language and interpreter for scenario-based testing of autonomous vehicles."> <script type="application/ld+json">
     {
         "author":
         {
             "@type": "Person",
             "name": "Felix  Gigler"
         },
-        "url": "https://figlerg.github.io/projects/1_openscenario/",
+        "url": "https://figlerg.github.io/projects/1_roadlogic/",
         "@type": "WebSite",
-        "description": "An interpreter for an OpenSCENARIO 2.1 domain-specific language",
-        "headline": "Scenario-Based Testing of Autonomous Vehicles",
+        "description": "A declarative language and interpreter for scenario-based testing of autonomous vehicles.",
+        "headline": "RoadLogic: Declarative Scenario-based Testing",
         
         "sameAs": ["https://github.com/figlerg","https://orcid.org/0000-0002-6495-9048","https://scholar.google.com/citations?user=zNDX9K8AAAAJ","https://www.linkedin.com/in/felix-gigler-93b86a228"],
         
@@ -19,7 +19,7 @@
   :root {
     --max-content-width: 930px;
   }
-</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="/assets/libs/fontawesome/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/academicons/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/scholar-icons/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="/assets/libs/google_fonts/google-fonts.css"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%94%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://figlerg.github.io/projects/1_openscenario/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="/assets/libs/fontawesome/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/academicons/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/libs/scholar-icons/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="/assets/libs/google_fonts/google-fonts.css"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%94%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://figlerg.github.io/projects/1_roadlogic/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Felix</span> Gigler </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/reading/">reading list </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/personal/">personal </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl shift f <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> <script>
       (function () {
@@ -46,7 +46,7 @@
           true,
         );
       })();
-    </script> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Scenario-Based Testing of Autonomous Vehicles</h1> <p class="post-description">An interpreter for an OpenSCENARIO 2.1 domain-specific language</p> </header> <article> <p>Scenario-based testing is a key technique for the verification &amp; validation of autonomous driving functions. As part of my work at AIT, I develop an interpreter for a domain-specific language based on <strong>OpenSCENARIO 2.1</strong>, used to describe and execute test scenarios for autonomous vehicles.</p> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Felix Gigler. © Felix Gigler. Built with <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> &amp; <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. <a href="https://figlerg.github.io/impressum/">Impressum</a>. </div> </footer> <script>
+    </script> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">RoadLogic: Declarative Scenario-based Testing</h1> <p class="post-description">A declarative language and interpreter for scenario-based testing of autonomous vehicles.</p> </header> <article> <p><strong>RoadLogic</strong> is a declarative approach to scenario-based testing of autonomous driving functions. It underpins our paper <em>Declarative Scenario-based Testing with RoadLogic</em> (presented at HSCC in Saint-Malo, France; preprint on arXiv, HSCC proceedings to appear). The tool builds on an interpreter for an <strong>OpenSCENARIO 2.1</strong> domain-specific language and is part of my research at AIT.</p> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Felix Gigler. © Felix Gigler. Built with <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> &amp; <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. <a href="https://figlerg.github.io/impressum/">Impressum</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -137,21 +137,24 @@ ninja.data = [{
             },},{id: "news-attended-the-vetss-summer-school-2025-verified-trustworthy-software-systems-at-the-advanced-research-centre-arc-university-of-glasgow",
           title: 'Attended the VeTSS Summer School 2025 (Verified Trustworthy Software Systems) at the Advanced...',
           description: "",
-          section: "News",},{id: "news-attended-hscc-hybrid-systems-computation-and-control",
-          title: 'Attended HSCC (Hybrid Systems: Computation and Control).',
+          section: "News",},{id: "news-attended-hscc-hybrid-systems-computation-and-control-in-saint-malo-france-and-presented-our-paper-declarative-scenario-based-testing-with-roadlogic-arxiv-to-appear-in-the-hscc-proceedings",
+          title: 'Attended HSCC (Hybrid Systems: Computation and Control) in Saint-Malo, France, and presented our...',
           description: "",
-          section: "News",},{id: "projects-scenario-based-testing-of-autonomous-vehicles",
-          title: 'Scenario-Based Testing of Autonomous Vehicles',
-          description: "An interpreter for an OpenSCENARIO 2.1 domain-specific language",
+          section: "News",},{id: "news-our-paper-uniform-sampling-for-timed-regular-expressions-was-accepted-at-emsoft-2026-part-of-esweek-tada",
+          title: 'Our paper Uniform Sampling for Timed Regular Expressions was accepted at EMSOFT 2026...',
+          description: "",
+          section: "News",},{id: "projects-roadlogic-declarative-scenario-based-testing",
+          title: 'RoadLogic: Declarative Scenario-based Testing',
+          description: "A declarative language and interpreter for scenario-based testing of autonomous vehicles.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_openscenario/";
-            },},{id: "projects-sampling-for-shape-expressions",
-          title: 'Sampling for Shape Expressions',
+              window.location.href = "/projects/1_roadlogic/";
+            },},{id: "projects-shapex-sampling-for-shape-expressions",
+          title: 'ShapEx: Sampling for Shape Expressions',
           description: "A tool for generating examples from shape expressions.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_shapex/";
-            },},{id: "projects-sampling-for-timed-regular-expressions",
-          title: 'Sampling for Timed Regular Expressions',
+            },},{id: "projects-voltre-sampling-for-timed-regular-expressions",
+          title: 'VolTRE: Sampling for Timed Regular Expressions',
           description: "Volumetry and uniform sampling methods for timed regular expressions.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_voltre/";
@@ -160,8 +163,8 @@ ninja.data = [{
           description: "Hit-and-run MCMC algorithms for sampling sets defined by arbitrary inequality constraints.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_anyhr/";
-            },},{id: "projects-epidemic-spreading-on-social-networks",
-          title: 'Epidemic Spreading on Social Networks',
+            },},{id: "projects-nettracesim-epidemic-spreading-on-social-networks",
+          title: 'NetTraceSim: Epidemic Spreading on Social Networks',
           description: "ABM/DES modeling of COVID epidemic spread and contact tracing on social networks.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_nettracesim/";

@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Sampling for Shape Expressions | Felix Gigler </title> <meta name="author" content="Felix Gigler"> <meta name="description" content="A tool for generating examples from shape expressions."> <meta name="keywords" content="Felix Gigler, automated reasoning, formal methods, autonomous systems, timed regular expressions, shape expressions, scenario-based testing, TU Wien, AIT"> <meta property="og:site_name" content="Felix Gigler"> <meta property="og:type" content="website"> <meta property="og:title" content="Felix Gigler | Sampling for Shape Expressions"> <meta property="og:url" content="https://figlerg.github.io/projects/1_shapex/"> <meta property="og:description" content="A tool for generating examples from shape expressions."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Sampling for Shape Expressions"> <meta name="twitter:description" content="A tool for generating examples from shape expressions."> <script type="application/ld+json">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> ShapEx: Sampling for Shape Expressions | Felix Gigler </title> <meta name="author" content="Felix Gigler"> <meta name="description" content="A tool for generating examples from shape expressions."> <meta name="keywords" content="Felix Gigler, automated reasoning, formal methods, autonomous systems, timed regular expressions, shape expressions, scenario-based testing, TU Wien, AIT"> <meta property="og:site_name" content="Felix Gigler"> <meta property="og:type" content="website"> <meta property="og:title" content="Felix Gigler | ShapEx: Sampling for Shape Expressions"> <meta property="og:url" content="https://figlerg.github.io/projects/1_shapex/"> <meta property="og:description" content="A tool for generating examples from shape expressions."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="ShapEx: Sampling for Shape Expressions"> <meta name="twitter:description" content="A tool for generating examples from shape expressions."> <script type="application/ld+json">
     {
         "author":
         {
@@ -8,7 +8,7 @@
         "url": "https://figlerg.github.io/projects/1_shapex/",
         "@type": "WebSite",
         "description": "A tool for generating examples from shape expressions.",
-        "headline": "Sampling for Shape Expressions",
+        "headline": "ShapEx: Sampling for Shape Expressions",
         
         "sameAs": ["https://github.com/figlerg","https://orcid.org/0000-0002-6495-9048","https://scholar.google.com/citations?user=zNDX9K8AAAAJ","https://www.linkedin.com/in/felix-gigler-93b86a228"],
         
@@ -46,7 +46,7 @@
           true,
         );
       })();
-    </script> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Sampling for Shape Expressions</h1> <p class="post-description">A tool for generating examples from shape expressions.</p> </header> <article> <p><a href="https://github.com/figlerg/ShapEx" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a></p> <div class="repo-readme"> <h2 id="introduction">Introduction</h2> <p>ShapEx is a tool that generates random behaviors from shape expressions, a formal specification formalism for describing sophisticated temporal behaviors of CPS. The tool samples a random behavior in two steps:</p> <p>(1) it first explores the space of qualitative parameterized shapes and then</p> <p>(2) instantiates parameters by sampling a possibly non-linear constraint.</p> <p>It uses several sampling algorithms for the different stages of sample generation and generates timed traces according to a textual shape expression file.</p> <h2 id="installation">Installation</h2> <p>ShapEx is written in Python 3 and uses our standalone library <em>anyHR</em>. It is necessary to have a working installation of Python 3, <a href="https://pip.pypa.io/en/stable/installing/" rel="external nofollow noopener" target="_blank">pip</a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" rel="external nofollow noopener" target="_blank">git</a> for the following installation process.</p> <p>To install the tool, open a terminal and type <code class="language-plaintext highlighter-rouge">pip install ShapEx</code>.</p> <p>This also installs <em>anyHR</em> and all other dependencies. The below example should now work right away.</p> <h2 id="use">Use</h2> <p>The following block illustrates a minimum working example for the use of the ShapEx tool to generate a set of “pulse” traces. 100 samples are generated for the SE from the imported text file ‘pulse.sx’.</p> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">shapex.shapex.ShapEx</span> <span class="kn">import</span> <span class="o">*</span>
+    </script> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">ShapEx: Sampling for Shape Expressions</h1> <p class="post-description">A tool for generating examples from shape expressions.</p> </header> <article> <p><a href="https://github.com/figlerg/ShapEx" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a></p> <div class="repo-readme"> <h2 id="introduction">Introduction</h2> <p>ShapEx is a tool that generates random behaviors from shape expressions, a formal specification formalism for describing sophisticated temporal behaviors of CPS. The tool samples a random behavior in two steps:</p> <p>(1) it first explores the space of qualitative parameterized shapes and then</p> <p>(2) instantiates parameters by sampling a possibly non-linear constraint.</p> <p>It uses several sampling algorithms for the different stages of sample generation and generates timed traces according to a textual shape expression file.</p> <h2 id="installation">Installation</h2> <p>ShapEx is written in Python 3 and uses our standalone library <em>anyHR</em>. It is necessary to have a working installation of Python 3, <a href="https://pip.pypa.io/en/stable/installing/" rel="external nofollow noopener" target="_blank">pip</a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" rel="external nofollow noopener" target="_blank">git</a> for the following installation process.</p> <p>To install the tool, open a terminal and type <code class="language-plaintext highlighter-rouge">pip install ShapEx</code>.</p> <p>This also installs <em>anyHR</em> and all other dependencies. The below example should now work right away.</p> <h2 id="use">Use</h2> <p>The following block illustrates a minimum working example for the use of the ShapEx tool to generate a set of “pulse” traces. 100 samples are generated for the SE from the imported text file ‘pulse.sx’.</p> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">shapex.shapex.ShapEx</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="n">shapex.misc.visualize</span> <span class="kn">import</span> <span class="n">plotter</span>
 
 <span class="c1"># initialize ShapEx object
@@ -180,21 +180,24 @@ ninja.data = [{
             },},{id: "news-attended-the-vetss-summer-school-2025-verified-trustworthy-software-systems-at-the-advanced-research-centre-arc-university-of-glasgow",
           title: 'Attended the VeTSS Summer School 2025 (Verified Trustworthy Software Systems) at the Advanced...',
           description: "",
-          section: "News",},{id: "news-attended-hscc-hybrid-systems-computation-and-control",
-          title: 'Attended HSCC (Hybrid Systems: Computation and Control).',
+          section: "News",},{id: "news-attended-hscc-hybrid-systems-computation-and-control-in-saint-malo-france-and-presented-our-paper-declarative-scenario-based-testing-with-roadlogic-arxiv-to-appear-in-the-hscc-proceedings",
+          title: 'Attended HSCC (Hybrid Systems: Computation and Control) in Saint-Malo, France, and presented our...',
           description: "",
-          section: "News",},{id: "projects-scenario-based-testing-of-autonomous-vehicles",
-          title: 'Scenario-Based Testing of Autonomous Vehicles',
-          description: "An interpreter for an OpenSCENARIO 2.1 domain-specific language",
+          section: "News",},{id: "news-our-paper-uniform-sampling-for-timed-regular-expressions-was-accepted-at-emsoft-2026-part-of-esweek-tada",
+          title: 'Our paper Uniform Sampling for Timed Regular Expressions was accepted at EMSOFT 2026...',
+          description: "",
+          section: "News",},{id: "projects-roadlogic-declarative-scenario-based-testing",
+          title: 'RoadLogic: Declarative Scenario-based Testing',
+          description: "A declarative language and interpreter for scenario-based testing of autonomous vehicles.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_openscenario/";
-            },},{id: "projects-sampling-for-shape-expressions",
-          title: 'Sampling for Shape Expressions',
+              window.location.href = "/projects/1_roadlogic/";
+            },},{id: "projects-shapex-sampling-for-shape-expressions",
+          title: 'ShapEx: Sampling for Shape Expressions',
           description: "A tool for generating examples from shape expressions.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_shapex/";
-            },},{id: "projects-sampling-for-timed-regular-expressions",
-          title: 'Sampling for Timed Regular Expressions',
+            },},{id: "projects-voltre-sampling-for-timed-regular-expressions",
+          title: 'VolTRE: Sampling for Timed Regular Expressions',
           description: "Volumetry and uniform sampling methods for timed regular expressions.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_voltre/";
@@ -203,8 +206,8 @@ ninja.data = [{
           description: "Hit-and-run MCMC algorithms for sampling sets defined by arbitrary inequality constraints.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_anyhr/";
-            },},{id: "projects-epidemic-spreading-on-social-networks",
-          title: 'Epidemic Spreading on Social Networks',
+            },},{id: "projects-nettracesim-epidemic-spreading-on-social-networks",
+          title: 'NetTraceSim: Epidemic Spreading on Social Networks',
           description: "ABM/DES modeling of COVID epidemic spread and contact tracing on social networks.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_nettracesim/";
