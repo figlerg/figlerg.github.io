@@ -351,6 +351,8 @@ scholar:
   details_link: Details
 
   query: "@*"
+  sort_by: month # within a year, newest first (entries carry a `month` field)
+  order: descending
   group_by: year
   group_order: descending
 
