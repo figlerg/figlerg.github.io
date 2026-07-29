@@ -1,16 +1,173 @@
 ---
 layout: page
 title: "RoadLogic: Declarative Scenario-based Testing"
-description: A declarative language and interpreter for scenario-based testing of autonomous vehicles.
+description: A logic-based planning and simulation framework for road scenarios, using Answer Set Programming and OpenSCENARIO 2.1.
 importance: 1
 category: research
 related_publications: false
 ---
 
-<!-- TODO Felix: arXiv-Button ergänzt, sobald du mir den Link gibst. -->
+<a href="https://github.com/figlerg/roadlogic" class="btn btn-sm z-depth-0" role="button"><i class="fa-brands fa-github"></i> View on GitHub</a>
+<a href="https://arxiv.org/abs/2603.09455" class="btn btn-sm z-depth-0" role="button">arXiv preprint</a>
 
-**RoadLogic** is a declarative approach to scenario-based testing of autonomous
-driving functions. It underpins our paper *Declarative Scenario-based Testing with
-RoadLogic* (presented at HSCC in Saint-Malo, France; preprint on arXiv, HSCC
-proceedings to appear). The tool builds on an interpreter for an **OpenSCENARIO 2.1**
-domain-specific language and is part of my research at AIT.
+<div class="repo-readme" markdown="1">
+{% raw %}
+**RoadLogic** is a logic-based planning and simulation framework for road and traffic scenarios.
+It synthesizes high-level driving plans using **Answer Set Programming (ASP)** and supports scenario specifications in **OpenSCENARIO 2.1 DSL**.
+The generated plans can be executed and evaluated through **CommonRoad** and the **Frenetix Motion Planner**.
+
+---
+
+## Reproducibility Evaluation
+See [REPRODUCIBILITY.md](https://github.com/figlerg/roadlogic/blob/main/REPRODUCIBILITY.md) and the PDF version [REPRODUCIBILITY.pdf](https://github.com/figlerg/roadlogic/blob/main/REPRODUCIBILITY.pdf).
+
+## Overview
+
+RoadLogic provides:
+
+* Declarative reasoning for scenario-based planning
+* Automatic plan synthesis from OpenSCENARIO 2.1 descriptions
+* Execution interface for CommonRoad simulations
+* Integration with the Frenetix motion-planning library
+
+> **Status:** This branch is frozen for reproducibility. Active development continues on the [main branch](https://github.com/figlerg/roadlogic).
+
+---
+
+## Installation
+### Docker
+To reproduce the figures in the paper, just use the Dockerfile. The experiments run for about 10h in total on my Dell Latitude with a 12th Gen Intel(R) Core(TM) i7-1265U. Your mileage may vary (and the computation time with it).
+
+- Inside this folder, run
+````docker build -t roadlogic-artifact .````
+
+- Run the container. 
+````docker run --rm -it --name roadlogic-artifact roadlogic-artifact````
+**Be careful:** remove ``--rm`` if you want the container to persist after usage.
+
+- Run the script to reproduce the Figures from the paper
+````bash paper/reproduce_experiments.sh````
+
+- This part takes about 10h.
+- Find the results under ````paper/figures````
+
+
+### Set up locally
+
+#### Prerequisites
+- Ubuntu 22.04.5 LTS (or WSL on Windows)
+- make
+- git
+- pyenv
+
+#### Setup
+```bash
+git clone https://github.com/figlerg/roadlogic.git
+cd roadlogic
+
+# using pyenv
+pyenv install 3.10.16
+pyenv local 3.10.16
+python -m venv venv
+source venv/bin/activate
+
+# check
+python --version
+which python
+
+# pip install
+pip install -U pip wheel setuptools
+pip install -e ./Frenetix-Motion-Planner   # local submodule
+pip install -e .                           # roadlogic itself
+```
+
+---
+
+### Test
+
+```bash
+python -m planning.Planner plans --osc2_file tests/overtake.osc -n 3 -a # run planning engine standalone
+bash experiments_src/exp_001/run.sh # run the experiments with their shell script. see shell script for some make examples
+```
+
+The experiments are carried out like this. Assume there is an experiment folder `EXP` with folders `EXP/in` and `EXP/out`, and a specification `EXP/in/spec.osc`. Then plans, plots and metrics can be generated as follows (see `experiments_src/common.sh` for the full pipeline):
+
+```bash
+N=10                    # number of plans
+STEP_LENGTH=60          # number of discarded plans before selecting the next, has minor impact on model diversity
+
+# actual planning module
+make generate-osc-scenarios \
+    OSC_N="$N" \
+    OSC_FILE="$EXP/in/spec.osc" \
+    OUTPUT_FOLDER="$EXP/out/cr_simulations" \
+    SCENARIOS_FOLDER="$EXP/out" \
+    STEP_LENGTH="$STEP_LENGTH" \
+    RULE_INJECTION="$EXP/in/rule_injection.lp"
+
+# simulate in CommonRoad (no visualization)
+make execute-all-scenarios \
+    SCENARIOS_FOLDER="$EXP/out/cr_scenarios" \
+    OUTPUT_FOLDER="$EXP/out/cr_simulations"
+
+# compute metrics for the monitor
+make -j 8 \
+    SCENARIOS_FOLDER="$EXP/out/cr_scenarios" \
+    OUTPUT_FOLDER="$EXP/out/cr_simulations" \
+    compute-selected-metrics-for-all-scenarios
+
+# compute monitoring results from the metrics (witnesses satisfaction)
+make generate-summary \
+    SCENARIOS_FOLDER="$EXP/out/cr_scenarios" \
+    OUTPUT_FOLDER="$EXP/out/cr_simulations" \
+    OSC_FILE="$EXP/in/spec.osc"
+
+# build a similarity matrix for the generated plans
+python commonroad_extensions/simulation_analysis/similarity.py \
+    --plans-folder "$EXP/out/serialized_models" \
+    --output-folder "$EXP/out/similarity"
+```
+
+---
+
+## Authors & Acknowledgments
+
+- Ezio Bartocci
+- Alessio Gambi
+- Felix Gigler
+- Cristinel Mateis
+- Dejan Nickovic
+
+This repository is maintained by Felix Gigler and Alessio Gambi.
+
+---
+
+## Citation
+
+If you use RoadLogic in academic work, please cite our forthcoming paper:
+
+````bibtex
+@inproceedings{bartocci2026roadlogic,
+  title     = {Declarative Scenario-based Testing with RoadLogic},
+  author    = {Bartocci, Ezio and Gambi, Alessio and Gigler, Felix and Mateis, Cristinel and Ni\v{c}kovi\'{c}, Dejan},
+  booktitle = {Proceedings of the 29th ACM International Conference on Hybrid Systems: Computation and Control (HSCC)},
+  year      = {2026},
+  note      = {To appear}
+}
+````
+Read the preprint [here](https://arxiv.org/pdf/2603.09455). Will be updated once the HSCC proceedings are available. 
+
+---
+
+## License
+
+* **RoadLogic core:** BSD 3-Clause License
+* **OpenSCENARIO 2 grammar and generated parser:** MPL-2.0
+* **Frenetix integration:** uses components under LGPL-3.0
+* See `THIRD_PARTY_NOTICES.md` for detailed attributions.
+
+---
+
+*© 2025 The RoadLogic Developers. Under construction.*
+{% endraw %}
+</div>
