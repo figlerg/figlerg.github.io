@@ -1,4 +1,6 @@
-# CV-Daten für die Seite /cv/. Felix: Datumsangaben & Details mit "TODO" ergänzen/korrigieren.
+# Targeted academic CV for /cv/.
+# Deliberately selective: research, teaching and studies only. Non-academic jobs
+# (tutoring, hospitality, call centre, civilian service) are intentionally omitted.
 cv:
   name: Felix Gigler
   label: PhD Candidate · Junior Scientist
@@ -6,8 +8,10 @@ cv:
   location: Vienna, Austria
   image: ""
   summary: >
-    PhD candidate in Automated Reasoning at TU Wien (in collaboration with AIT) and
-    Junior Scientist at AIT. Research in formal methods and autonomous systems.
+    PhD candidate in Automated Reasoning at TU Wien, in collaboration with AIT Austrian
+    Institute of Technology, where I also work as a Junior Scientist. My research is in
+    formal methods and autonomous systems: specification languages, sampling algorithms
+    for formal formalisms, and scenario-based testing of autonomous vehicles.
 
   social_networks:
     - network: GitHub
@@ -17,34 +21,66 @@ cv:
 
   sections:
     Experience:
-      - company: AIT Austrian Institute of Technology
-        position: Junior Scientist
-        location: Vienna, Austria
-        url: https://www.ait.ac.at/
-        start_date: TODO   # z.B. 2022
-        end_date: present
-        summary: >
-          Research in formal methods and autonomous systems, alongside the PhD.
-        highlights:
-          - "TODO: konkrete Tätigkeiten/Beiträge"
-
       - company: TU Wien
         position: PhD Candidate in Automated Reasoning
         location: Vienna, Austria
         url: https://www.tuwien.at/
-        start_date: TODO
+        start_date: 2025 # TODO Felix: genaues Startdatum des PhD prüfen
         end_date: present
         summary: >
-          In collaboration with AIT. Topics include sampling for Shape Expressions
-          and Timed Regular Expressions, and scenario-based testing of autonomous vehicles.
+          In collaboration with AIT Austrian Institute of Technology.
+        highlights:
+          - "Uniform sampling and volumetry for timed regular expressions."
+          - "Declarative, scenario-based testing of autonomous driving functions."
+
+      - company: AIT Austrian Institute of Technology
+        position: Junior Scientist
+        location: Vienna, Austria
+        url: https://www.ait.ac.at/
+        start_date: 2022-01
+        end_date: present
+        highlights:
+          - "Virtual testing strategies for autonomous vehicle controllers."
+          - "Tooling for state-of-the-art scenario description languages (OpenSCENARIO 2.1 DSL)."
+          - "Plan synthesis with answer-set programming for scenario-based testing."
+
+      - company: Université Grenoble Alpes (VERIMAG)
+        position: Research Intern
+        location: Grenoble, France
+        start_date: 2024-03
+        end_date: 2024-07
+        highlights:
+          - "Volumetry and uniform sampling algorithms for timed regular expressions."
+          - "Implementation of VolTRE, a library for uniform sampling of TRE."
 
       - company: TU Wien
         position: Teaching Assistant
         location: Vienna, Austria
-        start_date: TODO
-        end_date: TODO
+        start_date: 2021-03
+        end_date: 2022-01
         highlights:
-          - "Contributed to research on timed systems."
+          - "Teaching assistant for three courses on mathematical modeling and simulation."
+          - "Developed MATLAB material on ODE solvers."
+          - "Supervised student projects on discrete-event, agent-based and cellular-automata modeling."
+
+      - company: AIT Austrian Institute of Technology
+        position: Research Freelancer
+        location: Vienna, Austria
+        start_date: 2020-03
+        end_date: 2021-12
+        highlights:
+          - "Sampling strategies for shape expressions; open-source tool ShapEx."
+          - "Formal verification research on specification languages for real-valued time series."
+          - "Co-authored two peer-reviewed papers on shape expressions."
+
+      - company: AIT Austrian Institute of Technology
+        position: Research Intern
+        location: Vienna, Austria
+        start_date: 2019-07
+        end_date: 2019-08
+        highlights:
+          - "ANTLR4 parser for the specification language shape expressions."
+          - "Prototype generating training data for a learned time-series monitor."
 
     Education:
       - institution: TU Wien
@@ -52,19 +88,54 @@ cv:
         url: https://www.tuwien.at/
         area: Logic and Computation
         studyType: MSc
-        start_date: TODO
-        end_date: TODO
+        start_date: 2022-03
+        end_date: 2025-03
+        highlights:
+          - "Thesis: *Uniform sampling of timed regular expressions*."
+
+      - institution: Technical University of Denmark (DTU)
+        location: Lyngby, Denmark
+        url: https://www.dtu.dk/english/
+        area: Exchange semester (Erasmus+)
+        studyType: ""
+        start_date: 2019-09
+        end_date: 2020-01
 
       - institution: TU Wien
         location: Vienna, Austria
         url: https://www.tuwien.at/
         area: Technical Mathematics
         studyType: BSc
-        start_date: TODO
-        end_date: TODO
+        start_date: 2016-09
+        end_date: 2021-12
+
+    Awards:
+      - title: Best Paper Award Nomination
+        date: 2026
+        awarder: HSCC 2026, CPS Week
+        summary: >
+          Nominated in the Systems and Applications track for *Declarative Scenario-based
+          Testing with RoadLogic*, Saint-Malo, France.
+
+      - title: Best Creative Lab Idea Award
+        date: 2022
+        awarder: CPS Summer School
+        summary: >
+          Awarded for the RAVYOLO tool pitch at the Creative Lab, Pula, Sardinia.
+
+    Skills:
+      - name: Programming
+        icon: fa-solid fa-code
+        keywords: "Python, MATLAB, ANTLR4, C/C++, R"
+      - name: Methods
+        icon: fa-solid fa-square-root-variable
+        keywords: "Formal methods, answer-set programming, modeling & simulation, MCMC sampling"
+      - name: Tools
+        icon: fa-solid fa-screwdriver-wrench
+        keywords: "Git, LaTeX, Markdown, Docker"
 
     Languages:
       - name: German
         summary: "Native speaker"
       - name: English
-        summary: "Fluent"
+        summary: "Full working proficiency"
