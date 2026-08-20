@@ -25,7 +25,7 @@ cv:
         position: PhD Candidate in Automated Reasoning
         location: Vienna, Austria
         url: https://www.tuwien.at/
-        start_date: 2025 # TODO Felix: genaues Startdatum des PhD prüfen
+        start_date: 2025-10
         end_date: present
         summary: >
           In collaboration with AIT Austrian Institute of Technology.
