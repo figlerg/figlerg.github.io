@@ -385,6 +385,7 @@ filtered_bibtex_keywords:
     html,
     inspirehep_id,
     mycomment,
+    sortkey,
     pdf,
     pmid,
     poster,

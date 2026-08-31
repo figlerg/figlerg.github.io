@@ -9,8 +9,9 @@ nav_order: 2
 
 <!--
 Diese Liste wird aus _bibliography/reading.bib erzeugt (NICHT papers.bib).
-Neues Paper hinzufügen: einen BibTeX-Eintrag in reading.bib einfügen und ein
-Feld  mycomment = {dein Kommentar}  ergänzen.
+Neues Paper hinzufügen: einen BibTeX-Eintrag in reading.bib einfügen, dazu die
+Felder  mycomment = {dein Kommentar}  und  sortkey = {NN}  (Reihenfolge).
+Die Liste ist bewusst NICHT nach Jahr sortiert, sondern nach sortkey.
 -->
 
 These are papers by **others** that I have enjoyed and recommend — not my own work
@@ -18,6 +19,6 @@ These are papers by **others** that I have enjoyed and recommend — not my own 
 
 <div class="publications">
 
-{% bibliography --file reading %}
+{% bibliography --file reading --group_by none --sort_by sortkey --order ascending %}
 
 </div>
