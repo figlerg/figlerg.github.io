@@ -36,7 +36,7 @@
     {% if include.limit and news_size > news_limit %}
       {% assign older_count = news_size | minus: news_limit %}
       <details class="news-older">
-        <summary style="cursor:pointer;color:var(--global-theme-color, #b509ac);font-weight:600;list-style:none;margin:0.2rem 0 0.4rem;">
+        <summary style="cursor:pointer;color:var(--global-theme-color, #38539f);font-weight:600;list-style:none;margin:0.2rem 0 0.4rem;">
           <i class="fa-solid fa-chevron-down"></i>&nbsp;Show {{ older_count }} older
           {% if older_count == 1 %}entry{% else %}entries{% endif %}
         </summary>

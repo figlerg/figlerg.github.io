@@ -1,0 +1,70 @@
+---
+# Local override of al_folio_core's assets/css/main.scss.
+# Only reason it exists: retune the accent colour (was magenta) to blue.
+# Keep the @use list in sync with the gem if you ever upgrade al_folio_core.
+---
+@charset "utf-8";
+
+@use "sass:math";
+@use "sass:string";
+
+/* Design tokens must be configured BEFORE any partial loads them.
+   $purple-color drives --global-theme-color in light mode,
+   $cyan-color drives it in dark mode (see _sass/_themes.scss in the gem). */
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default: "930px" }},
+  $purple-color: #38539f,
+  $cyan-color: #8ba3e6
+);
+
+@use "themes";
+@use "layout";
+
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/* ---------------------------------------------------------------------------
+   Venue chips on publication / reading-list entries.
+   Rendered on the right-hand side by _layouts/bib.liquid as "CONFERENCE · EMSOFT".
+   --------------------------------------------------------------------------- */
+:root {
+  --global-chip-bg-color: #eaeef8;
+}
+
+html[data-theme="dark"] {
+  --global-chip-bg-color: #1c2436;
+}
+
+.pub-side {
+  text-align: right;
+}
+
+.pub-chip {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+  color: var(--global-theme-color);
+  background: var(--global-chip-bg-color);
+}
+
+@media (max-width: 576px) {
+  .pub-side {
+    text-align: left;
+    margin-top: 0.4rem;
+  }
+}

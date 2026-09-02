@@ -386,6 +386,7 @@ filtered_bibtex_keywords:
     inspirehep_id,
     mycomment,
     sortkey,
+    venue_type,
     pdf,
     pmid,
     poster,
