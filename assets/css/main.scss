@@ -92,3 +92,21 @@ html[data-theme="dark"] {
     }
   }
 }
+
+/* ---------------------------------------------------------------------------
+   About page: full intro on tablet/desktop, condensed intro on phones.
+   Both live in _pages/about.md; only one is shown at a time.
+   --------------------------------------------------------------------------- */
+.intro-short {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .intro-full {
+    display: none;
+  }
+
+  .intro-short {
+    display: block;
+  }
+}

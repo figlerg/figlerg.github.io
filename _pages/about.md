@@ -22,15 +22,47 @@ announcements:
   limit: 5 # newest 5 shown; older ones fold into an expandable block
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false # ausgeblendet, bis es echte Blog-Posts gibt (siehe auch nav in _pages/blog.md)
+  scrollable: true
+  limit: 3
 ---
 
-I am a PhD candidate in **Automated Reasoning** at [TU Wien](https://www.tuwien.at/), in collaboration with the [AIT Austrian Institute of Technology](https://www.ait.ac.at/), where I also work as a Junior Scientist.
+<!-- Zwei Varianten desselben Texts: .intro-full ab Tablet aufwärts,
+     .intro-short am Handy (kürzer, damit es keine Textwand ist).
+     Styling dazu steht in assets/css/main.scss. -->
 
-My research spans **formal methods** and **autonomous systems**. Recent and ongoing work includes sampling strategies for Shape Expressions, uniform sampling for Timed Regular Expressions, and scenario-based testing of autonomous vehicles through an OpenSCENARIO 2.1 DSL interpreter. Earlier on, I worked on epidemiological modeling and simulation. I have co-authored peer-reviewed publications in verification &amp; validation and in simulation.
+<div class="intro-full" markdown="1">
 
-Before the PhD I was a Teaching Assistant at TU Wien and contributed to research on timed systems. I hold a Master's degree in Logic &amp; Computation and a Bachelor's in Technical Mathematics.
+I am a PhD candidate in **Automated Reasoning** at [TU Wien](https://www.tuwien.at/), in
+collaboration with the [AIT Austrian Institute of Technology](https://www.ait.ac.at/),
+where I also work as a Junior Scientist.
 
-You can find my publications [here](/publications/), some notes and writing on the [blog](/blog/), and a few papers I have enjoyed on my [reading list](/reading/). Feel free to reach out — links below.
+My research spans **formal methods** and **autonomous systems**. Recent and ongoing work
+includes uniform sampling of *Timed Regular Expressions* for test case generation, and
+scenario-based testing of automated vehicles.
+
+Right now I am exploring how **large language models** can support interactive theorem
+proving in *Lean 4*, with cyber-physical systems as the application domain.
+
+Earlier on I worked on epidemiological modeling and simulation, and I have co-authored
+peer-reviewed publications in verification &amp; validation and in simulation. Coming from a
+background in pure mathematics, I still have a soft spot for algebra.
+
+Have a look at my [publications](/publications/), the [projects](/projects/) and code behind
+them, or a few papers I have enjoyed on my [reading list](/reading/). Feel free to reach
+out — links below.
+
+</div>
+
+<div class="intro-short" markdown="1">
+
+PhD candidate in **Automated Reasoning** at TU Wien and AIT, working on **formal methods**
+and **autonomous systems**.
+
+Recent work: uniform sampling of *Timed Regular Expressions* for test generation, and
+scenario-based testing of automated vehicles. Currently exploring how **large language
+models** can support theorem proving in *Lean 4*.
+
+[Publications](/publications/) · [Projects](/projects/) · [Reading list](/reading/)
+
+</div>
