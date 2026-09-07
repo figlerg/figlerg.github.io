@@ -7,7 +7,8 @@ email: felix.gigler@tuwien.ac.at # wird gegen Spam-Bots verschleiert dargestellt
 github_username: figlerg
 orcid_id: 0000-0002-6495-9048
 scholar_userid: zNDX9K8AAAAJ
+dblp_url: https://dblp.org/pid/278/8813.html
 linkedin_username: felix-gigler-93b86a228
 
 # cv_pdf: /assets/pdf/cv.pdf # optional: sobald du ein CV-PDF hinterlegst, hier eintragen
-rss_icon: true # RSS-Icon anzeigen (auskommentieren zum Ausblenden)
+# rss_icon: true # ausgeblendet, solange es keine Blog-Posts gibt (Feed wäre leer)
