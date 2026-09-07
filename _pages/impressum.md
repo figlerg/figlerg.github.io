@@ -2,32 +2,24 @@
 layout: page
 permalink: /impressum/
 title: Impressum
-description: Offenlegung gemäß § 5 ECG und § 25 Mediengesetz.
+description: Informationen zum Betreiber dieser Seite.
 nav: false
 ---
 
-<!--
-TODO Felix: Bitte prüfen/ausfüllen. Für eine rein private, nicht-kommerzielle
-Forscher-Seite ist die Impressumspflicht in AT umstritten – mit dieser Angabe
-bist du aber auf der sicheren Seite. Im Zweifel kurz mit der Uni-Rechtsabteilung
-oder der ÖH-Rechtsberatung abklären.
--->
-
-**Angaben gemäß § 5 E-Commerce-Gesetz (ECG) und § 25 Mediengesetz**
-
-Felix Gigler
-[Straße und Hausnummer — TODO]
-[PLZ Ort], Österreich
-
-**Kontakt**
-E-Mail: felix.gigler@tuwien.ac.at
+Diese Website ist ein **privates, nicht-kommerzielles Angebot**. Sie dient
+ausschließlich der Darstellung meiner wissenschaftlichen Tätigkeit, enthält keine
+Werbung, kein Tracking und kein entgeltliches Angebot.
 
 **Verantwortlich für den Inhalt**
 Felix Gigler
+PhD Candidate, TU Wien · Junior Scientist, AIT Austrian Institute of Technology
+Wien, Österreich
 
-Diese Website ist ein privates, nicht-kommerzielles Angebot und dient der
-Darstellung meiner wissenschaftlichen Tätigkeit. Die hier geäußerten Inhalte
-geben meine persönliche Meinung wieder und nicht notwendigerweise die meiner
-Arbeitgeber (TU Wien, AIT Austrian Institute of Technology).
+**Kontakt**
+felix.gigler@tuwien.ac.at
+
+Die hier geäußerten Inhalte geben meine persönliche Auffassung wieder und nicht
+notwendigerweise jene meiner Arbeitgeber (TU Wien, AIT Austrian Institute of
+Technology).
 
 Siehe auch die [Datenschutzerklärung](/datenschutz/).

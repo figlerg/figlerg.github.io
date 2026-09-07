@@ -68,3 +68,27 @@ html[data-theme="dark"] {
     margin-top: 0.4rem;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Mobile: the profile photo is `width: 100%` in the theme, which on a phone
+   means a full-screen face before any content. Cap it and centre it so the
+   page reads as a profile, not a portrait.
+   --------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .profile {
+    text-align: center;
+    margin-bottom: 1.25rem;
+
+    img {
+      width: auto;
+      max-width: 190px;
+      max-height: 190px;
+      object-fit: cover;
+      margin: 0 auto;
+    }
+
+    .more-info {
+      text-align: center;
+    }
+  }
+}
