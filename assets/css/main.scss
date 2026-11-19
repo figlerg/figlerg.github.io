@@ -110,3 +110,24 @@ html[data-theme="dark"] {
     display: block;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Profile side block: the theme sets `display: inline-block` on these lines, so
+   role and location ran together ("Scientist, AIT Vienna, Austria"). Give each
+   line its own row and set the location apart.
+   --------------------------------------------------------------------------- */
+.profile .more-info {
+  p {
+    display: block;
+    margin: 0;
+  }
+
+  .role .org {
+    font-weight: 600;
+  }
+
+  .loc {
+    margin-top: 0.4rem;
+    opacity: 0.7;
+  }
+}

@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>PhD Candidate, TU Wien</p>
-    <p>Scientist, AIT</p>
-    <p>Vienna, Austria</p>
+    <p class="role">PhD Candidate, <span class="org">TU Wien</span></p>
+    <p class="role">Scientist, <span class="org">AIT</span></p>
+    <p class="loc">Vienna, Austria</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
