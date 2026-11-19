@@ -39,8 +39,8 @@ cv:
         url: https://www.ait.ac.at/
         start_date: 2022-01
         end_date: present
-        summary: > # TODO Felix: Jahr der Beförderung prüfen
-          Promoted from Junior Scientist to Scientist in 2026.
+        summary: >
+          Promoted from Junior Scientist to Scientist in October 2026.
         highlights:
           - "Virtual testing strategies for autonomous vehicle controllers."
           - "Tooling for state-of-the-art scenario description languages (OpenSCENARIO 2.1 DSL)."
