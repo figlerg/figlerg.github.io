@@ -384,6 +384,7 @@ filtered_bibtex_keywords:
     hal,
     html,
     inspirehep_id,
+    month,
     mycomment,
     sortkey,
     venue_type,
