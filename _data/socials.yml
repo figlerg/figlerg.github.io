@@ -9,6 +9,12 @@ orcid_id: 0000-0002-6495-9048
 scholar_userid: zNDX9K8AAAAJ
 dblp_url: https://dblp.org/pid/278/8813.html
 linkedin_username: felix-gigler-93b86a228
+research_gate_profile: Felix_Gigler2
+work_url: https://informatics.tuwien.ac.at/people/felix-gigler/ # TU Wien Personenseite (Koffer-Icon)
+ait_pure: # eigener Eintrag: AIT-Publikationsprofil (PURE)
+  url: https://publications.ait.ac.at/en/persons/felix.gigler/
+  title: AIT publications
+  logo: fa-solid fa-building-columns
 
 # cv_pdf: /assets/pdf/cv.pdf # optional: sobald du ein CV-PDF hinterlegst, hier eintragen
 # rss_icon: true # ausgeblendet, solange es keine Blog-Posts gibt (Feed wäre leer)
