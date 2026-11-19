@@ -63,7 +63,9 @@ permissions:
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
-    runs-on: ubuntu-latest
+    # Pinned: `ubuntu-latest` drifted to a newer image that has no prebuilt Ruby 3.3.5,
+    # which broke "Setup Ruby". 24.04 matches the Ruby in Gemfile.lock and docker-compose.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
