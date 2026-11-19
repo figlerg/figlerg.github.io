@@ -370,6 +370,10 @@
         {{- entry.abbr -}}
       </span>
     {% endif %}
+    {% comment %} Secondary chip, e.g. the conference an EMSOFT/TCAD paper was presented at. {% endcomment %}
+    {% if entry.venue_extra %}
+      <span class="pub-chip alt">{{ entry.venue_extra }}</span>
+    {% endif %}
     {% if entry.preview %}
       {% if entry.preview contains '://' %}
         <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">

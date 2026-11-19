@@ -388,6 +388,7 @@ filtered_bibtex_keywords:
     mycomment,
     sortkey,
     venue_type,
+    venue_extra,
     pdf,
     pmid,
     poster,
