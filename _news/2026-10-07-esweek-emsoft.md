@@ -7,8 +7,11 @@ inline: false
 related_posts: false
 ---
 
-In October I presented our paper on *Uniform Sampling for Timed Regular Expressions* at
-**EMSOFT '26**, part of ACM/IEEE Embedded Systems Week (ESWEEK) in Barcelona.
+In October I presented our paper on [*Uniform Sampling for Timed Regular
+Expressions*](https://doi.org/10.1109/TCAD.2026.3728141) at **EMSOFT '26**, part of
+ACM/IEEE Embedded Systems Week (ESWEEK) in Barcelona. It is open access (CC BY 4.0) — the
+[PDF](/assets/pdf/uniform-sampling-tre-tcad2026.pdf) is also on this site, and the tool is
+on [GitHub](https://github.com/figlerg/VolTRE).
 
 {% include figure.liquid path="assets/img/news/esweek26-emsoft-talk.jpg" class="img-fluid rounded z-depth-1" alt="Presenting Uniform Sampling for Timed Regular Expressions at EMSOFT '26 in Barcelona" %}
 
@@ -39,4 +42,4 @@ quantitatively.
   </div>
 </div>
 
-<!-- TODO Felix: Sobald die Proceedings da sind, hier DOI/Links der beiden Paper ergänzen. -->
+<!-- TODO Felix: DOI/Link für *Spatial Resiliency in Cyber-Physical Systems* ergänzen, sobald verfügbar. -->
