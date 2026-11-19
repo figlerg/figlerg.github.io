@@ -27,6 +27,9 @@
               {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
             {% else %}
               <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% if item.description %}
+                <div class="news-description">{{ item.description }}</div>
+              {% endif %}
             {% endif %}
           </td>
         </tr>
@@ -49,6 +52,9 @@
                   {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
                 {% else %}
                   <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                  {% if item.description %}
+                    <div class="news-description">{{ item.description }}</div>
+                  {% endif %}
                 {% endif %}
               </td>
             </tr>

@@ -9,7 +9,7 @@ last_name: Gigler
 contact_note: >
   Reachable at felix.gigler@tuwien.ac.at (TU Wien) or felix.gigler@ait.ac.at (AIT).
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Felix Gigler — PhD candidate in Automated Reasoning at TU Wien and Junior Scientist at AIT, working on formal methods and autonomous systems.
+  Felix Gigler — PhD candidate in Automated Reasoning at TU Wien and Scientist at AIT, working on formal methods and autonomous systems.
 footer_text: >
   © Felix Gigler.
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a href="https://github.com/alshedivat/al-folio">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.

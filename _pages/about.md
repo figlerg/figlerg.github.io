@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>PhD Candidate, TU Wien</p>
-    <p>Junior Scientist, AIT</p>
+    <p>Scientist, AIT</p>
     <p>Vienna, Austria</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -35,7 +35,7 @@ latest_posts:
 
 I am a PhD candidate in **Automated Reasoning** at [TU Wien](https://www.tuwien.at/), in
 collaboration with the [AIT Austrian Institute of Technology](https://www.ait.ac.at/),
-where I also work as a Junior Scientist.
+where I also work as a Scientist.
 
 My research spans **formal methods** and **autonomous systems**. Recent and ongoing work
 includes uniform sampling of *Timed Regular Expressions* for test case generation, and

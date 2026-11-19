@@ -12,7 +12,7 @@ Werbung, kein Tracking und kein entgeltliches Angebot.
 
 **Verantwortlich für den Inhalt**
 Felix Gigler
-PhD Candidate, TU Wien · Junior Scientist, AIT Austrian Institute of Technology
+PhD Candidate, TU Wien · Scientist, AIT Austrian Institute of Technology
 Wien, Österreich
 
 **Kontakt**

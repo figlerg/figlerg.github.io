@@ -3,13 +3,13 @@
 # (tutoring, hospitality, call centre, civilian service) are intentionally omitted.
 cv:
   name: Felix Gigler
-  label: PhD Candidate · Junior Scientist
+  label: PhD Candidate · Scientist
   email: felix.gigler@tuwien.ac.at
   location: Vienna, Austria
   image: ""
   summary: >
     PhD candidate in Automated Reasoning at TU Wien, in collaboration with AIT Austrian
-    Institute of Technology, where I also work as a Junior Scientist. My research is in
+    Institute of Technology, where I also work as a Scientist. My research is in
     formal methods and autonomous systems: specification languages, sampling algorithms
     for formal formalisms, and scenario-based testing of autonomous vehicles.
 
@@ -34,11 +34,13 @@ cv:
           - "Declarative, scenario-based testing of autonomous driving functions."
 
       - company: AIT Austrian Institute of Technology
-        position: Junior Scientist
+        position: Scientist
         location: Vienna, Austria
         url: https://www.ait.ac.at/
         start_date: 2022-01
         end_date: present
+        summary: > # TODO Felix: Jahr der Beförderung prüfen
+          Promoted from Junior Scientist to Scientist in 2026.
         highlights:
           - "Virtual testing strategies for autonomous vehicle controllers."
           - "Tooling for state-of-the-art scenario description languages (OpenSCENARIO 2.1 DSL)."
