@@ -356,6 +356,12 @@ scholar:
   group_by: year
   group_order: descending
 
+# Zitationszahlen von OpenAlex, beim Build geholt (_plugins/openalex_citations.rb).
+# Erscheinen als "Cited by N"-Button (nur bei N > 0). Der Deploy-Workflow baut
+# zusaetzlich jeden Montag neu, damit die Zahlen aktuell bleiben.
+openalex_citations:
+  enabled: true
+
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
 enable_publication_badges:

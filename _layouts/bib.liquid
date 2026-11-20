@@ -165,6 +165,19 @@
       {% if entry.bibtex_show %}
         <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
       {% endif %}
+      {% comment %} Citation count from OpenAlex, fetched at build time by _plugins/openalex_citations.rb {% endcomment %}
+      {% if entry.doi and site.data.openalex_citations %}
+        {% assign oa_doi = entry.doi | downcase %}
+        {% assign oa = site.data.openalex_citations[oa_doi] %}
+        {% if oa and oa.count > 0 %}
+          <a
+            href="https://openalex.org/works?filter=cites:{{ oa.id }}"
+            class="citations btn btn-sm z-depth-0"
+            role="button"
+            title="Citation count from OpenAlex, updated weekly"
+          >Cited by {{ oa.count }}</a>
+        {% endif %}
+      {% endif %}
       {% if entry.html %}
         {% if entry.html contains '://' %}
           <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>

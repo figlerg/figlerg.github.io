@@ -55,6 +55,9 @@ on:
       - "!docs/FAQ.md"
       - "!docs/INSTALL.md"
       - "!README.md"
+  schedule:
+    # Weekly rebuild (Mondays 05:17 UTC) to refresh the OpenAlex citation counts.
+    - cron: "17 5 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -94,6 +97,10 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
       - name: Install and Build 🔧
+        env:
+          # Free key from https://openalex.org/settings/api, stored as a repository secret.
+          # Without it the OpenAlex citation counts may be skipped (shared rate limit).
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
