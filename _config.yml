@@ -402,6 +402,8 @@ filtered_bibtex_keywords:
     selected,
     slides,
     supp,
+    thesis,
+    thesis_label,
     video,
     website,
   ]

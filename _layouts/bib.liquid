@@ -227,6 +227,15 @@
       {% if entry.website %}
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
+      {% comment %} Local field: extended version of the work as a thesis PDF (assets/pdf/ or full URL) {% endcomment %}
+      {% if entry.thesis %}
+        {% if entry.thesis contains '://' %}
+          {% assign thesis_url = entry.thesis %}
+        {% else %}
+          {% assign thesis_url = entry.thesis | prepend: '/assets/pdf/' | relative_url %}
+        {% endif %}
+        <a href="{{ thesis_url }}" class="btn btn-sm z-depth-0" role="button" title="Extended version: {{ entry.thesis_label | default: 'thesis' }}">Thesis</a>
+      {% endif %}
     </div>
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}

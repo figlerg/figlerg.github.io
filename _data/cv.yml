@@ -93,7 +93,7 @@ cv:
         start_date: 2022-03
         end_date: 2025-03
         highlights:
-          - "Thesis: *Uniform sampling of timed regular expressions*."
+          - "Thesis: *Uniform sampling of timed regular expressions* ([PDF](/assets/pdf/gigler2025-msc-thesis.pdf))."
 
       - institution: Technical University of Denmark (DTU)
         location: Lyngby, Denmark
@@ -110,6 +110,8 @@ cv:
         studyType: BSc
         start_date: 2016-09
         end_date: 2021-12
+        highlights:
+          - "Thesis: *Generating Traces from Shape Expressions* ([PDF](/assets/pdf/gigler2021-bsc-thesis.pdf)), basis of the MEMOCODE '21 paper on ShapEx."
 
     Awards:
       - title: Best Paper Award Nomination
